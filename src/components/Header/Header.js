@@ -1,47 +1,61 @@
 import React from 'react'
 import './Header.css'
+
 import HeaderImg from '../../images/header-img.png'
 import ArrowLogo from '../../images/arrow-logo.svg'
 import UpArrow from '../../images/up-arrow.svg'
+import SearchIcon from '../../images/search-icon.svg'
 import ReactMultiSelectCheckboxes from 'react-multiselect-checkboxes';
 
 const countries = [
-    { countries: 'Thing 1', value: 1 },
-    { countries: 'Thing 2', value: 2 },
+    { label: 'Andorra', value: 1 },
+    { label: 'United Arab Emirates', value: 2 },
+    { label: 'Afghanistan', value: 3 },
+    { label: 'Antigua and Barbuda', value: 4 },
+    { label: 'Anguilla', value: 5 },
+    { label: 'Albania', value: 6 },
+    { label: 'Armenia', value: 7 },
+    { label: 'Angola', value: 8 }
+];
+const sports = [
+    { label: 'Soccer', value: 1 },
+    { label: 'Motorsport', value: 2 },
+    { label: 'Fighthing', value: 3 },
+    { label: 'Baseball', value: 4 },
+    { label: 'Basketball', value: 5 },
+    { label: 'American Football', value: 6 },
+    { label: 'Ice Hockey', value: 7 },
+    { label: 'Golf', value: 8 }
 ];
 
-const sports = [
-    { sports: 'Thing 1', value: 1 },
-    { sports: 'Thing 2', value: 2 },
-]
+
 
 const Header = () => {
     return (
         <header>
             <nav>
-                <span>
+                <span className="logo-box">
                     <img src={ArrowLogo} alt="" />
                     <h4>Sports.db</h4>
                 </span>
                 <form className="search-box">
+                    <span className="search-btn">
+                        <img src={SearchIcon} alt="" />
+                    </span>
                     <input className="search" type="text"></input>
-                    <span className="search-btn"></span>
                 </form>
             </nav>
             <figure>
                 <img src={HeaderImg} alt="" />
+                <figcaption>
+                    <h1>Find Your League</h1>
+                </figcaption>
             </figure>
-            <article>
-                <h1>
-                    Find Your League
-                </h1>
-            </article>
-            <figure>
+            <aside>
                 <img src={UpArrow} alt="" />
-            </figure>
+            </aside>
 
             <ReactMultiSelectCheckboxes options={countries} />
-            
             <ReactMultiSelectCheckboxes options={sports} />
 
             {/* <select name="all-countries" id="countries">

@@ -1,0 +1,21 @@
+.competitionsSocial {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 4rem;
+}
+
+.competitionsSocial ul {
+  width: 50%;
+}
+
+.competitionsSocial ul li {
+  margin-bottom: 2rem;
+}
+
+.competitionsSocial div {
+  width: 48%;
+  text-align: right;
+  padding-right: 2%;
+}
+/*# sourceMappingURL=CompetitionsSocial.css.map */

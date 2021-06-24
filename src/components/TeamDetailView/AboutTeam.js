@@ -5,7 +5,7 @@ import arsenal from '../../images/arsenal.png';
 const AboutTeam = () => {
   return (
     <div className='aboutTeam'>
-      <h2></h2>
+      <h2> </h2>
       <article>
         <p>
           Arsenal Football Club is a professional football club based in

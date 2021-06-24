@@ -1,40 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 header {
   background-color: #0f0f0f;
   color: #fff;
+  overflow: hidden;
 }
 
-.multipleSelection {
-  width: 300px;
-  background-color: #bcc2c1;
-}
-
-.selectBox {
-  position: relative;
-}
-
-.selectBox select {
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  padding: 2% 5%;
   width: 100%;
-  font-weight: bold;
+  z-index: 1;
 }
 
-.overSelect {
+header .logo-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+header .logo-box h4 {
+  text-transform: uppercase;
+  margin-left: 10px;
+  font-size: 1.8rem;
+}
+
+header .search-box {
+  border: 3px solid white;
+  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px;
+}
+
+header .search-box:hover > input[type="text"] {
+  width: 240px;
+  padding: 0 20px;
+}
+
+header input[type="text"] {
+  background-color: transparent;
+  outline: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+  width: 20px;
+}
+
+header figure {
+  width: 1093px;
+  height: 600px;
+  position: relative;
+  z-index: 0;
+}
+
+header figure img {
+  margin-top: 8%;
+  width: 100%;
+  height: 100%;
+}
+
+header figure figcaption {
+  font-size: 70px;
+  text-transform: uppercase;
+  text-align: right;
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  top: 40%;
+  right: -53%;
 }
 
-#checkBoxes {
-  display: none;
-  border: 1px #8df5e4 solid;
+header figure figcaption h1 {
+  width: 80%;
 }
 
-#checkBoxes label {
-  display: block;
+header aside {
+  position: fixed;
+  right: 5%;
+  bottom: 1%;
 }
 
-#checkBoxes label:hover {
-  background-color: #4f615e;
+header aside svg {
+  width: 100%;
+  height: 100%;
 }
 /*# sourceMappingURL=Header.css.map */
