@@ -1,4 +1,5 @@
 import React from 'react'
+import './Header.css'
 import HeaderImg from '../../images/header-img.png'
 import ArrowLogo from '../../images/arrow-logo.svg'
 import UpArrow from '../../images/up-arrow.svg'
@@ -43,7 +44,7 @@ const Header = () => {
             
             <ReactMultiSelectCheckboxes options={sports} />
 
-            <select name="all-countries" id="countries">
+            {/* <select name="all-countries" id="countries">
                 <option value="">All Countries</option>
                 <option value="andorra">Andorra</option>
                 <option value="uae">United Arab Emirates</option>
@@ -64,9 +65,9 @@ const Header = () => {
                 <option value="af">American Football</option>
                 <option value="ih">Ice Hockey</option>
                 <option value="golf">Golf</option>
-            </select>
+            </select> */}
 
-            <form>
+            {/* <form>
                 <div class="multipleSelection">
                     <div class="selectBox"
                         onclick="showCheckboxes()">
@@ -96,7 +97,7 @@ const Header = () => {
                         </label>
                     </div>
                 </div>
-            </form>
+            </form> */}
         </header>
     );
 }
