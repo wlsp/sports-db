@@ -4,7 +4,7 @@ import Description from '../components/TeamDetailView/Description';
 import CompetitionsSocial from '../components/TeamDetailView/CompetitionsSocial';
 import AboutTeam from '../components/TeamDetailView/AboutTeam';
 import arsenal from '../images/arsenal.png';
-import Home from '../components/homePage/Home';
+
 
 import './TeamDetailView.scss';
 
@@ -29,7 +29,6 @@ const TeamDetailView = () => {
         </aside>
       </div>
       <CompetitionsSocial />
-      <Home />
     </div>
   );
 };
