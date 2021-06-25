@@ -1,33 +1,115 @@
-.multiselect {
-  width: 200px;
-}
+.select {
+  display: inline-block;
+  width:100%;
+  height: 30vmin;
+  text-align:right;
+  padding:50px;
+  //   div {
+  //     background-color: transparent !important;
+  //   }
+  //   .css-1v99tuv {
+  //     color: white;
+  //   }
+  //   .css-bs449s,
+  //   .css-1r4vtzz {
+  //     border: 1px solid white;
+  //     width: 250px;
+  //     height: 30px;
+  //     background-color: transparent;
+  //   }
+  //   .css-1pcexqc-container {
+  //     background-color: transparent;
+  //     color: white;
+  //   }
+  //   .css-r48cen-option {
+  //     color: white;
+  //   }
+  //   .css-1vr111p-option,
+  //   .css-1qprcsu-option {
+  //     color: white;
+  //   }
 
-.selectBox {
-  position: relative;
-}
 
-.selectBox select {
-  width: 100%;
-  font-weight: bold;
-}
+    form {
+        display:inline-block;
+        padding-left:80px;
+    }
+    .multiselect {
+      width: 300px;
+      position: relative;
+    }
 
-.overSelect {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
+    .selectBox select {
+      width: 100%;
+      font-weight: bold;
+      background-color: transparent;
+      color: white;
+      border: 3px solid white;
+      height: 40px;
+      font-size: 1rem;
+    }
+    .overSelect {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
 
-#checkboxes {
-  display: none;
-  border: 1px #dadada solid;
-}
+    #checkboxes {
+      width: 300px;
+      height: auto;
+      position: absolute;
+      border: 2px solid white;
+      z-index: 99999;
+    }
 
-#checkboxes label {
-  display: block;
-}
+    #checkboxes label {
+      display: block;
+      color: white;
+      border-bottom: 1px solid white;
+      padding: 5px;
+      display: flex;
+      font-size: 1.1rem;
+      align-items: center;
+      input[type="checkbox"] {
+        -webkit-appearance: initial;
+        appearance: initial;
+        width: 20px;
+        height: 20px;
+        border: 2px solid white;
+        overflow: hidden;
+        position: relative;
+        &:checked:before {
+          border: 2px solid white;
+        }
+        &:checked {
+          background-color: transparent;
+          &:checked:after {
+            content: "\2715";
+            color: white;
+            font-size: 25px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
 
-#checkboxes label:hover {
-  background-color: #1e90ff;
+    .hide {
+      display: none;
+    }
+    .show {
+      display: block;
+      height: 100px;
+    }
+    .res {
+        background-color: red;
+        color: white;
+    }
 }
