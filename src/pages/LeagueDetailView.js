@@ -9,8 +9,8 @@ import '../components/LeagueDetailView/Header1.scss';
 
 
 
-function App() {
-    return (<div className='App'>
+function Country() {
+    return (<div className='country'>
         <HeaderEps></HeaderEps>
         <Header2></Header2>
         <ImageEngLeague></ImageEngLeague>
@@ -22,4 +22,4 @@ function App() {
     )
 }
 
-export default App;
+export default Country;
