@@ -1,11 +1,10 @@
 import React from 'react';
 import './AboutTeam.scss';
-import arsenal from '../../images/arsenal.png';
 
-const AboutTeam = () => {
+const AboutTeam = ({ heading, imgSrc }) => {
   return (
     <div className='aboutTeam'>
-      <h2> </h2>
+      <h2>{heading}</h2>
       <article>
         <p>
           Arsenal Football Club is a professional football club based in
@@ -46,7 +45,7 @@ const AboutTeam = () => {
         </p>
       </article>
       <div className='imgHolder'>
-        <img src={arsenal} alt='arsenal'></img>
+        {imgSrc ? <img src={imgSrc} alt='arsenal' /> : null}
       </div>
     </div>
   );
