@@ -4,23 +4,11 @@ import Description from '../components/TeamDetailView/Description';
 import CompetitionsSocial from '../components/TeamDetailView/CompetitionsSocial';
 import AboutTeam from '../components/TeamDetailView/AboutTeam';
 import arsenal from '../images/arsenal.png';
+import Home from '../components/homePage/Home';
 
 import './TeamDetailView.scss';
 
 const TeamDetailView = () => {
-  useEffect(() => {
-    async function myData() {
-      try {
-        let data = await axios.get(
-          'https://www.thesportsdb.com/api/v1/json/1/all_sports.php'
-        );
-        console.log(data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    myData();
-  }, []);
   return (
     <div className='teamDetailView'>
       <Description />
@@ -41,6 +29,7 @@ const TeamDetailView = () => {
         </aside>
       </div>
       <CompetitionsSocial />
+      <Home />
     </div>
   );
 };
