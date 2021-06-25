@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,mBAAmB,CAAC;EAClB,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,IAAI;CAYjB;;AAdD,AAGE,mBAHiB,CAGjB,EAAE,CAAC;EACD,KAAK,EAAE,GAAG;CAIX;;AARH,AAKI,mBALe,CAGjB,EAAE,CAEA,EAAE,CAAC;EACD,aAAa,EAAE,IAAI;CACpB;;AAPL,AASE,mBATiB,CASjB,GAAG,CAAC;EACF,KAAK,EAAE,GAAG;EACV,UAAU,EAAE,KAAK;EACjB,aAAa,EAAE,EAAE;CAClB",
+    "sources": [
+        "CompetitionsSocial.scss"
+    ],
+    "names": [],
+    "file": "CompetitionsSocial.css"
+}

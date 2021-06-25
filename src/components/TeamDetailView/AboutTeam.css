@@ -1,0 +1,16 @@
+.aboutTeam article {
+  padding: 1rem;
+  display: table;
+}
+
+.aboutTeam article p {
+  display: table-cell;
+  padding: 1rem;
+  font-size: 1.3rem;
+}
+
+.aboutTeam .imgHolder {
+  text-align: center;
+  padding: 4rem 0;
+}
+/*# sourceMappingURL=AboutTeam.css.map */
