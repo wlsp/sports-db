@@ -26,11 +26,13 @@ const Home = () => {
 
   return (
     <div>
-      {test.map((el) => (
-        <Link to='/etwas' style={{ color: 'white', display: 'block' }}>
-          {el.strLeague}
-        </Link>
-      ))}
+      {league
+        ? test.map((el) => (
+            <Link to='/etwas' style={{ color: 'white', display: 'block' }}>
+              {el.strLeague}
+            </Link>
+          ))
+        : null}
     </div>
   );
 };
