@@ -9,7 +9,7 @@ figure {
     margin: 0;
     padding: 0;
 }
-figcaption {
+    figcaption {
     font-size: 4rem;
     position: absolute;
     top: 30%;
@@ -17,9 +17,17 @@ figcaption {
     padding: 0 18rem;
     
     h1 {
-        width: 30%;
-        text-transform: uppercase;
+    padding: 0 30rem;
+    text-transform: uppercase;
+    transform: translateX(-17rem);
+           
 
+    }
+
+    h2{ 
+    font-size: 4rem;
+    text-transform: uppercase;
+    transform: translate(35rem, -6rem);
     }
     
     
