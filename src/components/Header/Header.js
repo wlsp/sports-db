@@ -1,5 +1,5 @@
 import React from 'react';
-import './Header.css';
+import './Header.scss';
 
 import HeaderImg from '../../images/header-img.png';
 import ArrowLogo from '../../images/arrow-logo.svg';

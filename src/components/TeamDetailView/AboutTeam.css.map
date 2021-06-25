@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AACE,UADQ,CACR,OAAO,CAAC;EACN,OAAO,EAAE,IAAI;EACb,OAAO,EAAE,KAAK;CAMf;;AATH,AAII,UAJM,CACR,OAAO,CAGL,CAAC,CAAC;EACA,OAAO,EAAE,UAAU;EACnB,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,MAAM;CAClB;;AARL,AAUE,UAVQ,CAUR,UAAU,CAAC;EACT,UAAU,EAAE,MAAM;EAClB,OAAO,EAAE,MAAM;CAChB",
-    "sources": [
-        "AboutTeam.scss"
-    ],
-    "names": [],
-    "file": "AboutTeam.css"
-}
