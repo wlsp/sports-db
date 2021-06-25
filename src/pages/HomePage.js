@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Hero from '../components/Hero/Hero';
 
 const HomePage = () => {
   let [league, setLeague] = useState(null);
@@ -101,6 +102,14 @@ const HomePage = () => {
             </Link>
           ))
         : null} */}
+      <Hero />
+      {league
+        ? test.map((el) => (
+            <Link to='/etwas' style={{ color: 'white', display: 'block' }}>
+              {el.strLeague}
+            </Link>
+          ))
+        : null}
     </div>
   );
 };

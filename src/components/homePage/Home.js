@@ -25,20 +25,6 @@
 //       )
 //     : null;
 
-<<<<<<< HEAD
-  return (
-    <div>
-      {league
-        ? test.map((el) => (
-            <Link to='/etwas' style={{ color: 'white', display: 'block' }}>
-              {el.strLeague}
-            </Link>
-          ))
-        : null}
-    </div>
-  );
-};
-=======
 //   return (
 //     <div>
 //       { league ?
@@ -50,6 +36,5 @@
 //     </div>
 //   );
 // };
->>>>>>> c2bb29279433be1a928231cfb6336b26b15b315d
 
 // export default Home;
