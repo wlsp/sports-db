@@ -1,0 +1,43 @@
+header {
+    color: #fff;
+    overflow: hidden;
+    figure {
+        width: 95%;
+        height: 700px;
+        position: relative;
+        left: -17%;
+        z-index: -1;
+        margin: 0;
+        padding: 0;
+        img {
+            margin-top: 8%;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+        }
+        figcaption {
+            font-size: 70px;
+            text-transform: uppercase;
+            text-align: right;
+            position: absolute;
+            top: 30%;
+            right: -39%;
+            margin: 0;
+            padding: 0;
+            h1 {
+                width: 80%;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+    aside {
+        position: fixed;
+        right: 5%;
+        bottom: 1%;
+        .arrow-up {
+            font-size: 10rem;
+            color: #e83539;
+        }
+    }
+}
