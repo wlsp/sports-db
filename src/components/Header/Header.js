@@ -53,10 +53,10 @@ const Header = () => {
         <img src={UpArrow} alt='' />
       </aside>
 
-      <ReactMultiSelectCheckboxes options={countries} />
-      <ReactMultiSelectCheckboxes options={sports} />
+      {/* <ReactMultiSelectCheckboxes options={countries} />
+      <ReactMultiSelectCheckboxes options={sports} /> */}
 
-      {/* <select name="all-countries" id="countries">
+      <select name="all-countries" id="countries">
                 <option value="">All Countries</option>
                 <option value="andorra">Andorra</option>
                 <option value="uae">United Arab Emirates</option>
@@ -77,39 +77,8 @@ const Header = () => {
                 <option value="af">American Football</option>
                 <option value="ih">Ice Hockey</option>
                 <option value="golf">Golf</option>
-            </select> */}
+            </select>
 
-      {/* <form>
-                <div class="multipleSelection">
-                    <div class="selectBox"
-                        onclick="showCheckboxes()">
-                        <select>
-                            <option>Select options</option>
-                        </select>
-                        <div class="overSelect"></div>
-                    </div>
-
-                    <div id="checkBoxes">
-                        <label for="first">
-                            <input type="checkbox" id="first" />
-                            checkBox1
-                        </label>
-
-                        <label for="second">
-                            <input type="checkbox" id="second" />
-                            checkBox2
-                        </label>
-                        <label for="third">
-                            <input type="checkbox" id="third" />
-                            checkBox3
-                        </label>
-                        <label for="fourth">
-                            <input type="checkbox" id="fourth" />
-                            checkBox4
-                        </label>
-                    </div>
-                </div>
-            </form> */}
     </header>
   );
 };

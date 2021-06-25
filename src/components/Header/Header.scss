@@ -6,16 +6,15 @@
 }
 
 header {
-  background-color: #0f0f0f;
   color: #fff;
-  overflow: hidden;
-
+  overflow-x: hidden;
+  height: 120vh;
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    padding: 2% 5%;
+    padding: 0 5%;
     width: 100%;
     z-index: 1;
   }
@@ -35,13 +34,13 @@ header {
     display: flex;
     align-items: center;
     padding: 5px;
-    &:hover > input[type='text'] {
+    &:hover > input[type="text"] {
       width: 240px;
-      padding: 0 20px;
+      padding: 0 10px;
     }
   }
 
-  input[type='text'] {
+  input[type="text"] {
     background-color: transparent;
     outline: transparent;
     border: none;
@@ -52,24 +51,32 @@ header {
   }
 
   figure {
-    width: 1093px;
-    height: 600px;
+    width: 100%;
+    height: 70%;
     position: relative;
-    z-index: 0;
+    left: -17%;
+    z-index: -1;
+    margin: 0;
+    padding: 0;
     img {
       margin-top: 8%;
       width: 100%;
       height: 100%;
+      padding: 0;
     }
     figcaption {
       font-size: 70px;
       text-transform: uppercase;
       text-align: right;
       position: absolute;
-      top: 40%;
-      right: -53%;
+      top: 30%;
+      right: -30%;
+      margin: 0;
+      padding: 0;
       h1 {
         width: 80%;
+        margin: 0;
+        padding: 0;
       }
     }
   }
@@ -85,37 +92,37 @@ header {
   }
 }
 
-// .multipleSelection {
-//   width: 300px;
-//   background-color: #bcc2c1;
-// }
+.multipleSelection {
+  width: 300px;
+  background-color: #bcc2c1;
+}
 
-// .selectBox {
-//   position: relative;
-// }
+.selectBox {
+  position: relative;
+}
 
-// .selectBox select {
-//   width: 100%;
-//   font-weight: bold;
-// }
+.selectBox select {
+  width: 100%;
+  font-weight: bold;
+}
 
-// .overSelect {
-//   position: absolute;
-//   left: 0;
-//   right: 0;
-//   top: 0;
-//   bottom: 0;
-// }
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
 
-// #checkBoxes {
-//   display: none;
-//   border: 1px #8df5e4 solid;
-// }
+#checkBoxes {
+  display: none;
+  border: 1px #8df5e4 solid;
+}
 
-// #checkBoxes label {
-//   display: block;
-// }
+#checkBoxes label {
+  display: block;
+}
 
-// #checkBoxes label:hover {
-//   background-color: #4f615e;
-// }
+#checkBoxes label:hover {
+  background-color: #4f615e;
+}
