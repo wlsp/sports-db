@@ -4,32 +4,11 @@
   height: 30vmin;
   text-align:right;
   padding:50px;
-  //   div {
-  //     background-color: transparent !important;
-  //   }
-  //   .css-1v99tuv {
-  //     color: white;
-  //   }
-  //   .css-bs449s,
-  //   .css-1r4vtzz {
-  //     border: 1px solid white;
-  //     width: 250px;
-  //     height: 30px;
-  //     background-color: transparent;
-  //   }
-  //   .css-1pcexqc-container {
-  //     background-color: transparent;
-  //     color: white;
-  //   }
-  //   .css-r48cen-option {
-  //     color: white;
-  //   }
-  //   .css-1vr111p-option,
-  //   .css-1qprcsu-option {
-  //     color: white;
-  //   }
-
-
+  .selectedCountrie, .selectedSport {
+    padding: 15px;
+    border: 3px solid white;
+    margin-left: 50px;
+  }
     form {
         display:inline-block;
         padding-left:80px;
