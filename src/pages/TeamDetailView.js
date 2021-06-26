@@ -8,7 +8,11 @@ import arsenal from '../images/arsenal.png';
 import './TeamDetailView.scss';
 
 const TeamDetailView = () => {
-  let regex = /\s+/g;
+  let style = {
+    color: 'white',
+    textDecoration: 'none',
+    textTransform: 'uppercase',
+  };
 
   let [team, setTeam] = useState(null);
 
@@ -60,11 +64,11 @@ const TeamDetailView = () => {
               />
               <CompetitionsSocial
                 competitions='Competitions'
-                league1={el.strLeague}
-                league2={el.strLeague2}
-                league3={el.strLeague3}
-                league4={el.strLeague4}
-                league5={el.strLeague5}
+                input1={el.strLeague}
+                input2={el.strLeague2}
+                input3={el.strLeague3}
+                input4={el.strLeague4}
+                input5={el.strLeague5}
               />
               <div className='teamDetailView-about'>
                 <aside>
@@ -89,7 +93,53 @@ const TeamDetailView = () => {
                   <span>Capacity</span>
                 </aside>
               </div>
-              <CompetitionsSocial />
+              <CompetitionsSocial
+                input1={
+                  <a
+                    style={style}
+                    href={`https://${el.strTwitter}`}
+                    target='_blank'
+                  >
+                    Twitter
+                  </a>
+                }
+                input2={
+                  <a
+                    style={style}
+                    href={`https://${el.strYoutube}`}
+                    target='_blank'
+                  >
+                    Youtube
+                  </a>
+                }
+                input3={
+                  <a
+                    style={style}
+                    href={`https://${el.strWebsite}`}
+                    target='_blank'
+                  >
+                    Website
+                  </a>
+                }
+                input4={
+                  <a
+                    style={style}
+                    href={`https://${el.strFacebook}`}
+                    target='_blank'
+                  >
+                    Facebook
+                  </a>
+                }
+                input5={
+                  <a
+                    style={style}
+                    href={`https://${el.strInstagram}`}
+                    target='_blank'
+                  >
+                    Instagram
+                  </a>
+                }
+              />
             </>
           );
         })}

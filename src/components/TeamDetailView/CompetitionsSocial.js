@@ -3,21 +3,21 @@ import './CompetitionsSocial.scss';
 
 const CompetitionsSocial = ({
   competitions,
-  league1,
-  league2,
-  league3,
-  league4,
-  league5,
+  input1,
+  input2,
+  input3,
+  input4,
+  input5,
 }) => {
   return (
     <div className='competitionsSocial'>
       <div>{competitions}</div>
       <ul>
-        <li>{league1}</li>
-        <li>{league2}</li>
-        <li>{league3}</li>
-        <li>{league4}</li>
-        <li>{league5}</li>
+        <li>{input1}</li>
+        <li>{input2}</li>
+        <li>{input3}</li>
+        <li>{input4}</li>
+        <li>{input5}</li>
       </ul>
     </div>
   );
