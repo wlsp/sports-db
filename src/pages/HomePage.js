@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import Hero from '../components/Hero/Hero';
-import Select from '../components/Select/Select'
+import Select from '../components/Select/Select';
+import List from '../components/homePage/List';
 
 const HomePage = () => {
   let [league, setLeague] = useState(null);
@@ -13,7 +14,11 @@ const HomePage = () => {
         let { data } = await axios.get(
           'https://www.thesportsdb.com/api/v1/json/1/all_leagues.php'
         );
-        setLeague(data.leagues);
+        setLeague(
+          data.leagues.sort((a, b) =>
+            a.strLeague.split(' ')[0] < b.strLeague.split(' ')[0] ? -1 : 1
+          )
+        );
       } catch (error) {
         console.log(error);
       }
@@ -30,15 +35,8 @@ const HomePage = () => {
 
   let myAlphabet = createAlphabet('A'.charCodeAt(0), 'Z'.charCodeAt(0));
   let letters = [];
-  //   for (let item of myAlphabet) {
-  //     letters.push({
-  //       `${item}`: [],
-  //     });
-  //   }
 
-  console.log(letters);
-
-  let test1 = [
+  let list = [
     { A: [] },
     { B: [] },
     { C: [] },
@@ -67,51 +65,39 @@ const HomePage = () => {
     { Z: [] },
   ];
 
-  let test = league
-    ? league.sort((a, b) =>
-        a.strLeague.split(' ')[0] < b.strLeague.split(' ')[0] ? -1 : 1
-      )
-    : null;
-
   let counter = 0;
   if (league) {
-    for (let item of test) {
-      if (item.strLeague.split('')[0] == myAlphabet[counter]) {
-        test1[counter][item.strLeague.split('')[0]].push(item);
+    for (let item of league) {
+      let letter = item.strLeague.split('')[0];
+      if (letter == myAlphabet[counter]) {
+        list[counter][letter].push(item);
       } else {
         counter++;
       }
     }
   }
 
-  console.log('test 1', test1);
+  console.log('test 1', list);
 
   return (
     <div>
-      {/* {league
-        ? test.map((el) => (
-            <Link to='/etwas' style={{ color: 'white', display: 'block' }}>
-              {el.strLeague}{' '}
-              <span
-                style={{
-                  display: 'inlineBlock',
-                  paddingLeft: '1rem',
-                  fontSize: '10px',
-                }}
-              >
-                {el.strSport}
-              </span>
-            </Link>
-          ))
-        : null} */}
       <Hero />
       <Select />
+      <List />
+      console.log(league)
       {league
-        ? test.map((el) => (
-            <Link to='/etwas' style={{ color: 'white', display: 'block' }}>
-              {el.strLeague}
-            </Link>
-          ))
+        ? list.map((el, i) => {
+            let letter = myAlphabet[i];
+            return (
+              el[letter].length > 0 && (
+                <List heading={letter}>
+                  {el[letter].map((o) => (
+                    <p>{o.strLeague}</p>
+                  ))}
+                </List>
+              )
+            );
+          })
         : null}
     </div>
   );

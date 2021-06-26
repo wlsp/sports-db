@@ -1,0 +1,26 @@
+.list {
+  padding: 3rem;
+  position: relative;
+  min-height: 50vh;
+
+  h1 {
+    top: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20rem;
+    color: black;
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: red;
+    position: absolute;
+    z-index: -5;
+  }
+  section {
+    padding-left: 15%;
+    padding-top: 10%;
+  }
+  p {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+}

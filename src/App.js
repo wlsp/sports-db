@@ -7,15 +7,14 @@ import Navbar from './components/Navigation/Navbar';
 import LeagueDetailView from './pages/LeagueDetailView';
 import HomePage from './pages/HomePage';
 
-
 function App() {
   return (
     <Router>
       <Navbar />
       <Switch>
-        <Route path="/team" exact component={TeamDetailView} />
-        <Route path="/league" exact component={LeagueDetailView} />
-        <Route path="/" exact component={HomePage} />
+        <Route path='/team' exact component={TeamDetailView} />
+        <Route path='/league/:id' exact component={LeagueDetailView} />
+        <Route path='/' exact component={HomePage} />
       </Switch>
     </Router>
   );
