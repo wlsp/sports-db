@@ -1,3 +1,4 @@
+import '../LeagueDetailView/LeagueDetailView.scss';
 import {
     Link
 } from "react-router-dom"
