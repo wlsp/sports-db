@@ -1,43 +1,62 @@
 header {
-    color: #fff;
-    overflow: hidden;
-    figure {
-        width: 95%;
-        height: 700px;
-        position: relative;
-        left: -17%;
-        z-index: -1;
+  color: #fff;
+  overflow: hidden;
+  figure {
+    width: 95%;
+    height: 700px;
+    position: relative;
+    left: -17%;
+    z-index: -1;
+    margin: 0;
+    padding: 0;
+    img {
+      margin-top: 8%;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+    }
+    figcaption {
+      font-size: 70px;
+      text-transform: uppercase;
+      text-align: right;
+      position: absolute;
+      top: 30%;
+      right: -39%;
+      margin: 0;
+      padding: 0;
+      h1 {
+        width: 80%;
         margin: 0;
         padding: 0;
-        img {
-            margin-top: 8%;
-            width: 100%;
-            height: 100%;
-            padding: 0;
-        }
-        figcaption {
-            font-size: 70px;
-            text-transform: uppercase;
-            text-align: right;
-            position: absolute;
-            top: 30%;
-            right: -39%;
-            margin: 0;
-            padding: 0;
-            h1 {
-                width: 80%;
-                margin: 0;
-                padding: 0;
-            }
-        }
+      }
     }
-    aside {
-        position: fixed;
-        right: 5%;
-        bottom: 1%;
-        .arrow-up {
-            font-size: 10rem;
-            color: #e83539;
-        }
+  }
+  aside {
+    position: fixed;
+    right: 5%;
+    bottom: 3%;
+    z-index: 2;
+    .arrow-up {
+      display: inline-block;
+      position: relative;
+      width: 80px;
+      height: 100px;
+      background-image: linear-gradient(#ffffff00, #ffffff00);
+      background-position: 0% 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 100%;
+      transition: all 1s;
+      &:hover {
+        background-color: #e83539;
+        background-size: 100% 100%;
+      }
+      -webkit-clip-path: polygon(50% 0, 93% 57%, 65% 57%, 64% 100%, 36% 100%, 36% 57%, 7% 57%);
+      clip-path: polygon(50% 0, 93% 57%, 65% 57%, 64% 100%, 36% 100%, 36% 57%, 7% 57%);
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
     }
+  }
 }
