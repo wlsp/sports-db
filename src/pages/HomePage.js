@@ -83,8 +83,6 @@ const HomePage = () => {
     <div>
       <Hero />
       <Select />
-      <List />
-      console.log(league)
       {league
         ? list.map((el, i) => {
             let letter = myAlphabet[i];
