@@ -7,7 +7,7 @@ import LinkTeam from '../components/LeagueDetailView/LinkTeam';
 import AstonVilla from '../components/LeagueDetailView/Header3AstonVilla';
 import Header3Brentford from '../components/LeagueDetailView/Header3Brentford';
 import ImageEngLeague from '../components/LeagueDetailView/ImagePremierLeage';
-import '../components/LeagueDetailView/Header1.scss';
+import '../components/LeagueDetailView/LeagueDetailView.scss';
 import Arsenal from '../components/LeagueDetailView/Header3Arsenal';
 
 
