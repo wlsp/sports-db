@@ -6,8 +6,8 @@ class Select extends Component {
     state = {
         isShown: false,
         isShow: false,
+        selected: [],
        countriesName: {
-           
            test1: false,
            test2: false,
            test3: false,
@@ -91,16 +91,16 @@ class Select extends Component {
                             <div class="overSelect"> </div>
                         </div>
                         <data id="checkboxes" className={this.state.isShow ? "show" : "hide"} >
-                            <label for="16"><input id="16" name="16" type="checkbox" onChange={this.selectedSport} />First checkbox</label>
-                            <label for="17"><input id="17" name="17" type="checkbox" onChange={this.selectedSport} />Second checkbox</label>
-                            <label for="18"><input id="18" name="16" type="checkbox" onChange={this.selectedSport} />Third checkbox</label>
-                            <label for="19"><input id="19" name="16" type="checkbox" onChange={this.selectedSport} />First checkbox</label>
-                            <label for="20"><input id="20" name="16" type="checkbox" onChange={this.selectedSport} />Second checkbox</label>
-                            <label for="21"><input id="21" name="16" type="checkbox" onChange={this.selectedSport} />Third checkbox</label>
-                            <label for="22"><input id="22" name="16" type="checkbox" onChange={this.selectedSport} />First checkbox</label>
-                            <label for="23"><input id="23" name="16" type="checkbox" onChange={this.selectedSport} />Second checkbox</label>
-                            <label for="24"><input id="24" name="16" type="checkbox" onChange={this.selectedSport} />Third checkbox</label>
-                            <label for="25"><input id="25" name="16" type="checkbox" onChange={this.selectedSport} />First checkbox</label>
+                            <label for="16"><input id="16" name="sport1" type="checkbox" onChange={this.selectedSport} />First checkbox</label>
+                            <label for="17"><input id="17" name="sport2" type="checkbox" onChange={this.selectedSport} />Second checkbox</label>
+                            <label for="18"><input id="18" name="sport3" type="checkbox" onChange={this.selectedSport} />Third checkbox</label>
+                            <label for="19"><input id="19" name="sport4" type="checkbox" onChange={this.selectedSport} />First checkbox</label>
+                            <label for="20"><input id="20" name="sport5" type="checkbox" onChange={this.selectedSport} />Second checkbox</label>
+                            <label for="21"><input id="21" name="sport6" type="checkbox" onChange={this.selectedSport} />Third checkbox</label>
+                            <label for="22"><input id="22" name="sport7" type="checkbox" onChange={this.selectedSport} />First checkbox</label>
+                            <label for="23"><input id="23" name="sport8" type="checkbox" onChange={this.selectedSport} />Second checkbox</label>
+                            <label for="24"><input id="24" name="sport9" type="checkbox" onChange={this.selectedSport} />Third checkbox</label>
+                            <label for="25"><input id="25" name="sport10" type="checkbox" onChange={this.selectedSport} />First checkbox</label>
                         </data>
                     </div>
                 </form>
