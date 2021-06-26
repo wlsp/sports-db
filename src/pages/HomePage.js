@@ -34,57 +34,32 @@ const HomePage = () => {
   }
 
   let myAlphabet = createAlphabet('A'.charCodeAt(0), 'Z'.charCodeAt(0));
-  let letters = [];
+  let letters = myAlphabet.map((el) => {
+    return {
+      [el]: [],
+    };
+  });
 
-  let list = [
-    { A: [] },
-    { B: [] },
-    { C: [] },
-    { D: [] },
-    { E: [] },
-    { F: [] },
-    { G: [] },
-    { H: [] },
-    { I: [] },
-    { J: [] },
-    { K: [] },
-    { L: [] },
-    { M: [] },
-    { N: [] },
-    { O: [] },
-    { P: [] },
-    { Q: [] },
-    { R: [] },
-    { S: [] },
-    { T: [] },
-    { U: [] },
-    { V: [] },
-    { W: [] },
-    { X: [] },
-    { Y: [] },
-    { Z: [] },
-  ];
-
-  let counter = 0;
   if (league) {
+    let counter = 0;
     for (let item of league) {
       let letter = item.strLeague.split('')[0];
       if (letter == myAlphabet[counter]) {
-        list[counter][letter].push(item);
+        letters[counter][letter].push(item);
       } else {
         counter++;
       }
     }
   }
 
-  console.log('test 1', list);
+  console.log('test 1', letters);
 
   return (
     <div>
       <Hero />
       <Select />
       {league
-        ? list.map((el, i) => {
+        ? letters.map((el, i) => {
             let letter = myAlphabet[i];
             return (
               el[letter].length > 0 && (
