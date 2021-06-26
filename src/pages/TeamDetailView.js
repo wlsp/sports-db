@@ -8,7 +8,11 @@ import arsenal from '../images/arsenal.png';
 import './TeamDetailView.scss';
 
 const TeamDetailView = () => {
-  let regex = /\s+/g;
+  let style = {
+    color: 'white',
+    textDecoration: 'none',
+    textTransform: 'uppercase',
+  };
 
   let [team, setTeam] = useState(null);
 
@@ -19,6 +23,7 @@ const TeamDetailView = () => {
           'https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=133604'
         );
         setTeam(data.teams);
+        console.log(team);
       } catch (error) {
         console.log(error);
       }
@@ -26,12 +31,22 @@ const TeamDetailView = () => {
     getData();
   }, []);
 
-  let stringLength = team && Math.ceil(team[0].strDescriptionEN.length / 2);
-  console.log('index of: ', stringLength);
+  function breakText(target) {
+    let stringLength = Math.ceil(target.length / 2);
+    let sliceIndex = target.indexOf(' ', stringLength);
+    let text1 = target.substring(0, sliceIndex);
+    let text2 = target.substring(sliceIndex);
 
-  let sliceIndex = team && team[0].strDescriptionEN.indexOf(' ', stringLength);
-  let text1 = team && team[0].strDescriptionEN.substring(0, sliceIndex);
-  let text2 = team && team[0].strDescriptionEN.substring(sliceIndex);
+    return {
+      text1,
+      text2,
+    };
+  }
+
+  let firstText = team && breakText(team[0].strDescriptionEN);
+  let stadiumText = team && breakText(team[0].strStadiumDescription);
+
+  console.log(team);
 
   return (
     <div className='teamDetailView'>
@@ -43,27 +58,88 @@ const TeamDetailView = () => {
                 name={el.strAlternate.split(' ')[0]}
                 country={el.strCountry}
                 location={el.strStadiumLocation}
-                estab={el.intFormedYear}
+                established={el.intFormedYear}
                 sport={el.strSport}
                 descImg={el.strTeamJersey}
               />
-              <CompetitionsSocial />
+              <CompetitionsSocial
+                competitions='Competitions'
+                input1={el.strLeague}
+                input2={el.strLeague2}
+                input3={el.strLeague3}
+                input4={el.strLeague4}
+                input5={el.strLeague5}
+              />
               <div className='teamDetailView-about'>
                 <aside>
                   <p>Description</p>
                 </aside>
-                <AboutTeam imgSrc={arsenal} />
+                <AboutTeam
+                  imgSrc={el.strTeamBadge}
+                  text1={firstText.text1}
+                  text2={firstText.text2}
+                />
               </div>
               <div className='teamDetailView-stadium'>
-                <AboutTeam heading='Stadium' />
+                <AboutTeam
+                  heading='Stadium'
+                  text1={stadiumText.text1}
+                  text2={stadiumText.text2}
+                />
                 <aside>
-                  <p>Emirates Stadium</p>
+                  <p>{el.strStadium}</p>
                   <span>Home</span>
                   <p>60338</p>
                   <span>Capacity</span>
                 </aside>
               </div>
-              <CompetitionsSocial />
+              <CompetitionsSocial
+                input1={
+                  <a
+                    style={style}
+                    href={`https://${el.strTwitter}`}
+                    target='_blank'
+                  >
+                    Twitter
+                  </a>
+                }
+                input2={
+                  <a
+                    style={style}
+                    href={`https://${el.strYoutube}`}
+                    target='_blank'
+                  >
+                    Youtube
+                  </a>
+                }
+                input3={
+                  <a
+                    style={style}
+                    href={`https://${el.strWebsite}`}
+                    target='_blank'
+                  >
+                    Website
+                  </a>
+                }
+                input4={
+                  <a
+                    style={style}
+                    href={`https://${el.strFacebook}`}
+                    target='_blank'
+                  >
+                    Facebook
+                  </a>
+                }
+                input5={
+                  <a
+                    style={style}
+                    href={`https://${el.strInstagram}`}
+                    target='_blank'
+                  >
+                    Instagram
+                  </a>
+                }
+              />
             </>
           );
         })}

@@ -13,7 +13,14 @@
     }
   }
   .imgHolder {
-    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     padding: 4rem 0;
+    width: 30%;
+    height: 30vh;
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 }

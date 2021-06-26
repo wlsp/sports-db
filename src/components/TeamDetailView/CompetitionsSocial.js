@@ -1,16 +1,23 @@
 import React from 'react';
 import './CompetitionsSocial.scss';
 
-const CompetitionsSocial = () => {
+const CompetitionsSocial = ({
+  competitions,
+  input1,
+  input2,
+  input3,
+  input4,
+  input5,
+}) => {
   return (
     <div className='competitionsSocial'>
-      <div>Competitions</div>
+      <div>{competitions}</div>
       <ul>
-        <li>English Premier League</li>
-        <li>UEFA Europa League</li>
-        <li>FA Cup</li>
-        <li>EFL Cup</li>
-        <li>FA Community Shield</li>
+        <li>{input1}</li>
+        <li>{input2}</li>
+        <li>{input3}</li>
+        <li>{input4}</li>
+        <li>{input5}</li>
       </ul>
     </div>
   );

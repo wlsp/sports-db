@@ -13,7 +13,7 @@ function App() {
       <Navbar />
       <Switch>
         <Route path='/team' exact component={TeamDetailView} />
-        <Route path='/league' exact component={LeagueDetailView} />
+        <Route path='/league/:id' exact component={LeagueDetailView} />
         <Route path='/' exact component={HomePage} />
       </Switch>
     </Router>
