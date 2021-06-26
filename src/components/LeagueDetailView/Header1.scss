@@ -1,11 +1,10 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 /*  font-family: 'Open Sans', sans-serif; */
 
 .country {
-position: relative;
-figure {
+  position: relative;
+  figure {
     width: 100%;
     height: 70%;
     position: relative;
@@ -13,72 +12,62 @@ figure {
     z-index: -1;
     margin: 0;
     padding: 0;
-}
-    figcaption {
+  }
+  figcaption {
     font-size: 4rem;
     position: absolute;
     top: 30%;
     right: -65%;
     padding: 0 18rem;
-    
+
     h1 {
-    padding: 0 30rem;
-    text-transform: uppercase;
-    transform: translateX(-17rem);
-           
-
+      padding: 0 30rem;
+      text-transform: uppercase;
+      transform: translateX(-17rem);
     }
 
-    h2{ 
-    font-size: 4rem;
-    text-transform: uppercase;
-    transform: translate(35rem, -6rem);
+    h2 {
+      font-size: 4rem;
+      text-transform: uppercase;
+      transform: translate(35rem, -6rem);
     }
-    
-    
-}
-img {
+  }
+  img {
     margin-top: 14rem;
-}
-
+  }
 }
 
 .linking {
-
-color: #ffffff;
-font-family: 'Montserrat', sans-serif;
-font-size: 48px;
-font-weight: 700;
-display: block;
-text-decoration: none;
-padding: 0 0 36px 48px;
-text-transform: uppercase;
-
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  display: block;
+  text-decoration: none;
+  padding: 0 0 36px 48px;
+  text-transform: uppercase;
 }
 
 .linking:hover {
-
-    text-decoration: underline;
-    cursor: pointer;
-    text-decoration-color: rgb(2, 207, 207);
-    text-decoration-thickness: 170px
-   
+  text-decoration: underline;
+  cursor: pointer;
+  text-decoration-color: rgb(2, 207, 207);
+  text-decoration-thickness: 170px;
 }
 
 span {
-    color: #ffffff;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 24px;
-    font-weight: 400;
-    text-decoration: dotted;
-    padding-left: 24px;
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  text-decoration: dotted;
+  padding-left: 24px;
 }
 
 span:hover {
-    text-decoration: none;
-
+  text-decoration: none;
 }
 
 #arsenalEng {
-    margin-top: 96px;
+  margin-top: 96px;
 }
