@@ -1,6 +1,10 @@
+import {
+    NavLink
+} from "react-router-dom"
+
 const AstonVilla = () => {
     return (
-        <h3> <a href></a>Aston Villa <span>Aston, Birmingham</span></h3 >
+        <NavLink className="linking" to="/">Aston Villa <span>Aston, Birmingham</span></NavLink >
     );
 }
 

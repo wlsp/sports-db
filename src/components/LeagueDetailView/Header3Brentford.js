@@ -1,6 +1,10 @@
+import {
+    NavLink
+} from "react-router-dom"
+
 const Header3Brentford = () => {
     return (
-        <h3>Brentford <span>Brentford, Hounslow</span></h3>
+        <NavLink className="linking" to="/">Brentford <span>Brentford, Hounslow</span></NavLink>
     );
 }
 
