@@ -24,3 +24,45 @@
     }
   }
 }
+
+@media (max-width: 1440px) {
+  .aboutTeam {
+    article {
+      p {
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .teamDetailView {
+    .aboutTeam {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      article {
+        padding: 0rem;
+        display: block;
+        width: 100%;
+
+        p {
+          padding: 1rem;
+          font-size: 1.3rem;
+          display: block;
+        }
+      }
+      .imgHolder {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 4rem 0;
+        width: 30%;
+        height: 30vh;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

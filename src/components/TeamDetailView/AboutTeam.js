@@ -9,7 +9,7 @@ const AboutTeam = ({ heading, imgSrc, text1, text2 }) => {
         <p>{text1}</p>
         <p>{text2}</p>
       </article>
-      <div className='imgHolder'>
+      <div style={{ display: !imgSrc && 'none' }} className='imgHolder'>
         {imgSrc ? <img src={imgSrc} alt='aboutTeam' /> : null}
       </div>
     </div>

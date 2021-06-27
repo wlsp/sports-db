@@ -1,31 +1,40 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 
 import Hero from '../components/Hero/Hero';
 import Select from '../components/Select/Select';
 import List from '../components/homePage/List';
-import CustomLink from '../components/LeagueDetailView/CustomLink';
+import HomeCustomLink from '../components/homePage/HomeCustomLink';
 
 const HomePage = () => {
   let [league, setLeague] = useState(null);
+  let [country, setCountry] = useState('England');
+  let [sport, setSport] = useState('Soccer');
+
   useEffect(() => {
+    let url;
+
+    if (country && sport) {
+      url = `https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?c=${country}&s=${sport}`;
+    } else if (country) {
+      url = `https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?c=${country}`;
+    } else {
+      url = `https://www.thesportsdb.com/api/v1/json/1/all_leagues.php`;
+    }
+
     async function getData() {
       try {
-        let { data } = await axios.get(
-          'https://www.thesportsdb.com/api/v1/json/1/all_leagues.php'
-        );
-        setLeague(
-          data.leagues.sort((a, b) =>
-            a.strLeague.split(' ')[0] < b.strLeague.split(' ')[0] ? -1 : 1
-          )
-        );
+        let { data } = await axios.get(url);
+        console.log(url);
+        console.log(data);
+        setLeague(data);
       } catch (error) {
         console.log(error);
       }
     }
     getData();
-  }, []);
+  }, [sport, country]);
 
   function createAlphabet(start, end) {
     return new Array(end - start + 1)
@@ -42,18 +51,35 @@ const HomePage = () => {
   });
 
   if (league) {
-    let counter = 0;
-    for (let item of league) {
-      let letter = item.strLeague.split('')[0];
-      if (letter == myAlphabet[counter]) {
-        letters[counter][letter].push(item);
-      } else {
-        counter++;
+    if (league.leagues) {
+      let sortedState = league.leagues.sort((a, b) =>
+        a.strLeague.split(' ')[0] < b.strLeague.split(' ')[0] ? -1 : 1
+      );
+      let counter = 0;
+      for (let item of sortedState) {
+        let letter = item.strLeague.split('')[0];
+        if (letter == myAlphabet[counter]) {
+          letters[counter][letter].push(item);
+        } else {
+          counter++;
+        }
+      }
+    } else if (league.countrys) {
+      let counter = 0;
+      for (let item of league.countrys) {
+        let letter = item.strCountry.split('')[0];
+        if (letter == myAlphabet[counter]) {
+          letters[counter][letter].push(item);
+        } else {
+          counter++;
+        }
       }
     }
   }
 
+  console.log(league);
   console.log('test 1', letters);
+  console.log('pripremljeni state: ', letters);
 
   return (
     <div>
@@ -64,11 +90,14 @@ const HomePage = () => {
             let letter = myAlphabet[i];
             return (
               el[letter].length > 0 && (
-                <List heading={letter}>
+                <List key={uuidv4()} heading={letter}>
                   {el[letter].map((o) => (
-                    <CustomLink linkTo={`/league/${o.idLeague}`}>
-                      {o.strLeagueAlternate}
-                    </CustomLink>
+                    <HomeCustomLink
+                      key={o.idLeague}
+                      linkTo={`/league/${o.idLeague}`}
+                      mainText={o.strLeague}
+                      secondText={o.strSport}
+                    />
                   ))}
                 </List>
               )

@@ -2,6 +2,7 @@
 /*  font-family: 'Open Sans', sans-serif; */
 
 .country {
+<<<<<<< HEAD
 position: relative;
 overflow:hidden ;
 figure {
@@ -25,14 +26,45 @@ figure {
       padding: 0 30rem;
       text-transform: uppercase;
       transform: translateX(-17rem);
+=======
+  position: relative;
+  overflow: hidden;
+  figure {
+    position: relative;
+    figure {
+      width: 100%;
+      height: 70%;
+      position: relative;
+      left: 23%;
+      z-index: -1;
+      margin: 0;
+      padding: 0;
+>>>>>>> a6844e65b4b076ddf8f24bdedf2f4915169961e1
     }
-
-    h2 {
+    figcaption {
       font-size: 4rem;
-      text-transform: uppercase;
-      transform: translate(35rem, -6rem);
+      position: absolute;
+      top: 30%;
+      right: -65%;
+      padding: 0 18rem;
+
+      h1 {
+        padding: 0 30rem;
+        text-transform: uppercase;
+        transform: translateX(-17rem);
+      }
+
+      h2 {
+        font-size: 4rem;
+        text-transform: uppercase;
+        transform: translate(35rem, -6rem);
+      }
+    }
+    img {
+      margin-top: 14rem;
     }
   }
+<<<<<<< HEAD
   img {
     margin: 0 auto;
     
@@ -48,13 +80,19 @@ figure {
   text-decoration: none;
   padding: 0 0 36px 48px;
   text-transform: uppercase;
+=======
+>>>>>>> a6844e65b4b076ddf8f24bdedf2f4915169961e1
 
   .linking:hover {
     text-decoration: underline;
     cursor: pointer;
     text-decoration-color: rgb(2, 207, 207);
+<<<<<<< HEAD
     transform: scale(3,2);
     
+=======
+    text-decoration-thickness: 170px;
+>>>>>>> a6844e65b4b076ddf8f24bdedf2f4915169961e1
   }
 
   span {
@@ -68,7 +106,6 @@ figure {
 
   span:hover {
     text-decoration: none;
-
   }
 
   #arsenalEng {
@@ -76,6 +113,7 @@ figure {
   }
 }
 
+<<<<<<< HEAD
 }
 
 .linking:hover {
@@ -85,3 +123,15 @@ figure {
   font-size: 73px;
   
 }
+=======
+.linking {
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  display: block;
+  text-decoration: none;
+  padding: 0 0 36px 48px;
+  text-transform: uppercase;
+}
+>>>>>>> a6844e65b4b076ddf8f24bdedf2f4915169961e1
