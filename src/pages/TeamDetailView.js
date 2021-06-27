@@ -3,16 +3,11 @@ import axios from 'axios';
 import Description from '../components/TeamDetailView/Description';
 import CompetitionsSocial from '../components/TeamDetailView/CompetitionsSocial';
 import AboutTeam from '../components/TeamDetailView/AboutTeam';
+import HomeCustomLink from '../components/homePage/HomeCustomLink';
 
 import './TeamDetailView.scss';
 
 const TeamDetailView = ({ match }) => {
-  let style = {
-    color: 'white',
-    textDecoration: 'none',
-    textTransform: 'uppercase',
-  };
-
   let [team, setTeam] = useState(null);
 
   // 133604
@@ -63,14 +58,14 @@ const TeamDetailView = ({ match }) => {
                 sport={el.strSport}
                 descImg={el.strTeamJersey}
               />
-              <CompetitionsSocial
-                competitions='Competitions'
-                input1={el.strLeague}
-                input2={el.strLeague2}
-                input3={el.strLeague3}
-                input4={el.strLeague4}
-                input5={el.strLeague5}
-              />
+
+              <CompetitionsSocial competitions='Competitions'>
+                <div>{el.strLeague}</div>
+                <div>{el.strLeague2}</div>
+                <div>{el.strLeague3}</div>
+                <div>{el.strLeague4}</div>
+                <div>{el.strLeague5}</div>
+              </CompetitionsSocial>
               <div className='teamDetailView-about'>
                 <aside>
                   <p>Description</p>
@@ -94,58 +89,32 @@ const TeamDetailView = ({ match }) => {
                   <span>Capacity</span>
                 </aside>
               </div>
-              <CompetitionsSocial
-                input1={
-                  <a
-                    rel='noreferrer'
-                    style={style}
-                    href={`https://${el.strTwitter}`}
-                    target='_blank'
-                  >
-                    Twitter
-                  </a>
-                }
-                input2={
-                  <a
-                    rel='noreferrer'
-                    style={style}
-                    href={`https://${el.strYoutube}`}
-                    target='_blank'
-                  >
-                    Youtube
-                  </a>
-                }
-                input3={
-                  <a
-                    rel='noreferrer'
-                    style={style}
-                    href={`https://${el.strWebsite}`}
-                    target='_blank'
-                  >
-                    Website
-                  </a>
-                }
-                input4={
-                  <a
-                    rel='noreferrer'
-                    style={style}
-                    href={`https://${el.strFacebook}`}
-                    target='_blank'
-                  >
-                    Facebook
-                  </a>
-                }
-                input5={
-                  <a
-                    rel='noreferrer'
-                    style={style}
-                    href={`https://${el.strInstagram}`}
-                    target='_blank'
-                  >
-                    Instagram
-                  </a>
-                }
-              />
+              <CompetitionsSocial>
+                <HomeCustomLink
+                  linkTo={`https://${el.strTwitter}`}
+                  mainText='Twitter'
+                />
+
+                <HomeCustomLink
+                  linkTo={`https://${el.strYoutube}`}
+                  mainText='YouTube'
+                />
+
+                <HomeCustomLink
+                  linkTo={`https://${el.strWebsite}`}
+                  mainText='Webseite'
+                />
+
+                <HomeCustomLink
+                  linkTo={`https://${el.strFacebook}`}
+                  mainText='Facebook'
+                />
+
+                <HomeCustomLink
+                  linkTo={`https://${el.strInstagram}`}
+                  mainText='Instagram'
+                />
+              </CompetitionsSocial>
             </React.Fragment>
           );
         })}
