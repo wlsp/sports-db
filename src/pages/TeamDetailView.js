@@ -3,11 +3,10 @@ import axios from 'axios';
 import Description from '../components/TeamDetailView/Description';
 import CompetitionsSocial from '../components/TeamDetailView/CompetitionsSocial';
 import AboutTeam from '../components/TeamDetailView/AboutTeam';
-import arsenal from '../images/arsenal.png';
 
 import './TeamDetailView.scss';
 
-const TeamDetailView = () => {
+const TeamDetailView = ({ match }) => {
   let style = {
     color: 'white',
     textDecoration: 'none',
@@ -16,11 +15,13 @@ const TeamDetailView = () => {
 
   let [team, setTeam] = useState(null);
 
+  // 133604
+
   useEffect(() => {
     async function getData() {
       try {
         let { data } = await axios.get(
-          'https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=133604'
+          `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${match.params.id}`
         );
         setTeam(data.teams);
         console.log(team);
@@ -53,7 +54,7 @@ const TeamDetailView = () => {
       {team &&
         team.map((el) => {
           return (
-            <>
+            <React.Fragment key={el.idTeam}>
               <Description
                 name={el.strAlternate.split(' ')[0]}
                 country={el.strCountry}
@@ -96,6 +97,7 @@ const TeamDetailView = () => {
               <CompetitionsSocial
                 input1={
                   <a
+                    rel='noreferrer'
                     style={style}
                     href={`https://${el.strTwitter}`}
                     target='_blank'
@@ -105,6 +107,7 @@ const TeamDetailView = () => {
                 }
                 input2={
                   <a
+                    rel='noreferrer'
                     style={style}
                     href={`https://${el.strYoutube}`}
                     target='_blank'
@@ -114,6 +117,7 @@ const TeamDetailView = () => {
                 }
                 input3={
                   <a
+                    rel='noreferrer'
                     style={style}
                     href={`https://${el.strWebsite}`}
                     target='_blank'
@@ -123,6 +127,7 @@ const TeamDetailView = () => {
                 }
                 input4={
                   <a
+                    rel='noreferrer'
                     style={style}
                     href={`https://${el.strFacebook}`}
                     target='_blank'
@@ -132,6 +137,7 @@ const TeamDetailView = () => {
                 }
                 input5={
                   <a
+                    rel='noreferrer'
                     style={style}
                     href={`https://${el.strInstagram}`}
                     target='_blank'
@@ -140,7 +146,7 @@ const TeamDetailView = () => {
                   </a>
                 }
               />
-            </>
+            </React.Fragment>
           );
         })}
     </div>
