@@ -148,3 +148,4 @@ const TeamDetailView = () => {
 };
 
 export default TeamDetailView;
+
