@@ -4,7 +4,7 @@ import {
 
 const Header3Brentford = () => {
     return (
-        <NavLink className="linking" to="/">Brentford <span>Brentford, Hounslow</span></NavLink>
+        <NavLink className="linking" to="/">Brentford <span className="spany" >Brentford, Hounslow</span></NavLink>
     );
 }
 

@@ -18,7 +18,7 @@ function Country() {
 
         <ImageEngLeague></ImageEngLeague>
         {/* <Header2></Header2> */}
-        <Arsenal></Arsenal>
+        <Arsenal mainText="Arsenal"></Arsenal>
         <AstonVilla></AstonVilla>
         <Header3Brentford></Header3Brentford>
 

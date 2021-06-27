@@ -4,7 +4,9 @@ import {
 
 const AstonVilla = () => {
     return (
-        <NavLink className="linking" to="/">Aston Villa <span>Aston, Birmingham</span></NavLink >
+
+        <NavLink className="linking" to="/">Aston Villa <span className="spany">Aston, Birmingham</span></NavLink >
+
     );
 }
 
