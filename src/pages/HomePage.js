@@ -5,7 +5,7 @@ import axios from 'axios';
 import Hero from '../components/Hero/Hero';
 import Select from '../components/Select/Select';
 import List from '../components/homePage/List';
-import CustomLink from '../components/LeagueDetailView/CustomLink';
+import HomeCustomLink from '../components/homePage/HomeCustomLink';
 
 const HomePage = () => {
   let [league, setLeague] = useState(null);
@@ -66,9 +66,11 @@ const HomePage = () => {
               el[letter].length > 0 && (
                 <List heading={letter}>
                   {el[letter].map((o) => (
-                    <CustomLink linkTo={`/league/${o.idLeague}`}>
-                      {o.strLeagueAlternate}
-                    </CustomLink>
+                    <HomeCustomLink
+                      linkTo={`/league/${o.idLeague}`}
+                      mainText={o.strLeague}
+                      secondText={o.strSport}
+                    />
                   ))}
                 </List>
               )

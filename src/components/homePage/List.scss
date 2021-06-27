@@ -16,12 +16,21 @@
     z-index: -5;
   }
   section {
-    padding-left: 6%;
+    padding-left: 13%;
     padding-top: 10%;
   }
   p {
     color: white;
     font-size: 3rem;
     font-weight: bold;
+  }
+  .linking {
+    span {
+      display: inline-block;
+      margin-left: 2rem;
+      font-size: 1rem;
+      // text-transform: lowercase;
+      text-transform: capitalize;
+    }
   }
 }
