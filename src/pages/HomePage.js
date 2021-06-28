@@ -10,7 +10,7 @@ import HomeCustomLink from '../components/homePage/HomeCustomLink';
 const HomePage = () => {
   let [league, setLeague] = useState(null);
   let [country, setCountry] = useState('');
-  let [sport, setSport] = useState('');
+  let [Sport, setSport] = useState('');
   let [allCountries, setAllCountries] = useState(null);
   let [allSports, setAllSports] = useState(null);
   const [isShown, setShown] = useState(false);
@@ -19,8 +19,8 @@ const HomePage = () => {
   useEffect(() => {
     let url;
 
-    if (country && sport) {
-      url = `https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?c=${country}&s=${sport}`;
+    if (country && Sport) {
+      url = `https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?c=${country}&s=${Sport}`;
     } else if (country) {
       url = `https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?c=${country}`;
     } else {
@@ -38,7 +38,7 @@ const HomePage = () => {
       }
     }
     getData();
-  }, [sport, country]);
+  }, [Sport, country]);
 
   useEffect(() => {
     async function getCountry() {
@@ -122,29 +122,6 @@ const HomePage = () => {
   return (
     <div>
       <Hero />
-<<<<<<< HEAD
-      <div className='select'>
-        <span className='selectedCountrie'> Countrie </span>
-        <span className='selectedSport'> Sport </span>
-        <form>
-          <div class='multiselect'>
-            <div class='selectBox'>
-              <select>
-                <option>All Countries</option>
-              </select>
-              <div class='overSelect' onClick={() => setShown(!isShown)}></div>
-            </div>
-            {isShown && (
-              <div className='checkboxes'>
-                {allCountries &&
-                  allCountries.map((countrie) => {
-                    return (
-                      <label>
-                        <input type='checkbox' />
-                        {countrie.name_en}
-                      </label>
-                    );
-=======
       <div className="select">
         <span className="selectedCountrie"> Countrie </span>
         <span className="selectedSport"> Sport </span>
@@ -171,34 +148,10 @@ const HomePage = () => {
                       return setCountry(newCountry)
                     }} />{countrie.name_en}</label>)
 
->>>>>>> 209d12ac8ae794aa2898724206fab311e5523caf
                   })}
               </div>
             )}
           </div>
-<<<<<<< HEAD
-        </form>
-        <form>
-          <div class='multiselect'>
-            <div class='selectBox'>
-              <select>
-                <option>All Sports</option>
-              </select>
-              <div class='overSelect' onClick={() => setShow(!isShow)}>
-                {' '}
-              </div>
-            </div>
-            {isShow && (
-              <div className='checkboxes'>
-                {allSports &&
-                  allSports.map((sport) => {
-                    return (
-                      <label>
-                        <input type='checkbox' />
-                        {sport.strSport}
-                      </label>
-                    );
-=======
         </div>
         < div className="form">
           <div className="multiselect">
@@ -212,8 +165,7 @@ const HomePage = () => {
                 {allSports &&
                   allSports.map((sport) => {
                     return (
-                      <label><input type="checkbox" checked={sport === sport.strSport} key={uuidv4()} value={sport.strSport} onChange={(checked) => setSport(checked.target.defaultValue)} />{sport.strSport}</label>)
->>>>>>> 209d12ac8ae794aa2898724206fab311e5523caf
+                      <label><input type="checkbox" checked={Sport === sport.strSport} key={uuidv4()} value={sport.strSport} onChange={(checked) => setSport(checked.target.defaultValue)} />{sport.strSport}</label>)
                   })}
               </div>
             )}
@@ -222,25 +174,6 @@ const HomePage = () => {
       </div>
       {league
         ? letters.map((el, i) => {
-<<<<<<< HEAD
-            let letter = myAlphabet[i];
-            return (
-              el[letter].length > 0 && (
-                <List key={uuidv4()} heading={letter}>
-                  {el[letter].map((o) => (
-                    <HomeCustomLink
-                      key={o.idLeague}
-                      linkTo={`/league/${o.idLeague}`}
-                      mainText={o.strLeague}
-                      secondText={o.strSport}
-                    />
-                  ))}
-                </List>
-              )
-            );
-          })
-        : null}
-=======
           let letter = myAlphabet[i];
           return (
             el[letter].length > 0 && (
@@ -260,7 +193,6 @@ const HomePage = () => {
         : null} {
         !league ? <h1 style={{ color: "white" }}>Not Available</h1> : null
       }
->>>>>>> 209d12ac8ae794aa2898724206fab311e5523caf
     </div>
   );
 };
