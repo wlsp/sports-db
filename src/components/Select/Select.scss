@@ -11,7 +11,7 @@
     margin-right: 30px;
     float: left;
   }
-  form {
+  .form {
     display: inline-block;
     padding-left: 80px;
   }
@@ -23,7 +23,7 @@
   .selectBox select {
     width: 100%;
     font-weight: bold;
-    background-color: transparent;
+    background-color: #0f0f0f;
     color: white;
     border: 3px solid white;
     height: 40px;
@@ -55,7 +55,6 @@
     display: flex;
     font-size: 1.1rem;
     align-items: center;
-    background-color: red;
     input[type="checkbox"] {
       -webkit-appearance: initial;
       appearance: initial;

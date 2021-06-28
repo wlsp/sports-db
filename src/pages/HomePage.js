@@ -121,38 +121,50 @@ const HomePage = () => {
       <div className="select">
         <span className="selectedCountrie"> Countrie </span>
         <span className="selectedSport"> Sport </span>
-        <form>
-          <div class="multiselect">
-            <div class="selectBox" >
+        <div className="form">
+          <div className="multiselect">
+            <div className="selectBox" >
               <select>
                 <option>All Countries</option>
-              </select><div class="overSelect" onClick={() => setShown(!isShown)}></div>
+              </select><div className="overSelect" onClick={() => setShown(!isShown)}></div>
             </div>{isShown && (
               <div className="checkboxes">
                 {allCountries &&
                   allCountries.map((countrie) => {
-                    return (<label><input type="checkbox" />{countrie.name_en}</label>)
+                    return (<label><input type="checkbox" checked={country === countrie.name_en} key={uuidv4()} value={countrie.name_en} onChange={(checked) => {
+                      let counrtys = checked.target.defaultValue.split(" ");
+                      let newCountry;
+                      if (counrtys.length > 1) {
+                        newCountry = counrtys.join("_");
+                        console.log(newCountry)
+                      } else {
+                        newCountry = counrtys.join(" ");
+                        console.log(newCountry)
+                      }
+                      return setCountry(newCountry)
+                    }} />{countrie.name_en}</label>)
+
                   })}
               </div>)}
           </div>
-        </form>
-        <form>
-          <div class="multiselect">
-            <div class="selectBox" >
+        </div>
+        < div className="form">
+          <div className="multiselect">
+            <div className="selectBox" >
               <select>
                 <option>All Sports</option>
               </select>
-              <div class="overSelect" onClick={() => setShow(!isShow)}> </div>
+              <div className="overSelect" onClick={() => setShow(!isShow)}> </div>
             </div>{isShow && (
               <div className="checkboxes"  >
                 {allSports &&
                   allSports.map((sport) => {
                     return (
-                      <label><input type="checkbox" />{sport.strSport}</label>)
+                      <label><input type="checkbox" checked={sport === sport.strSport} key={uuidv4()} value={sport.strSport} onChange={(checked) => setSport(checked.target.defaultValue)} />{sport.strSport}</label>)
                   })}
               </div>)}
           </div>
-        </form>
+        </div>
       </div>
       {league
         ? letters.map((el, i) => {
@@ -172,7 +184,9 @@ const HomePage = () => {
             )
           );
         })
-        : null}
+        : null} {
+        !league ? <h1 style={{ color: "white" }}>Not Available</h1> : null
+      }
     </div>
   );
 };
