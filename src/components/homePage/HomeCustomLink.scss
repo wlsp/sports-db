@@ -1,5 +1,6 @@
 .homeCustomLink {
   margin-bottom: 1.3rem;
+
   a {
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
@@ -18,6 +19,12 @@
       display: inline-block;
       font-weight: normal;
     }
+  }
+  .underline {
+    display: block;
+    height: 10px;
+    width: inherit;
+    background-color: red;
   }
   .linkHolder:hover {
     background: linear-gradient(to right, red 50%, black 50%);
