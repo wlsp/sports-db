@@ -9,7 +9,7 @@ import SearchIcon from '../../images/search-icon.svg';
 const Header = () => {
     return (
             <nav>
-                <Link exact to="/" activeClassName="isActive">
+                <Link exact to="/">
                 <span className='logo-box'>
                     <img src={ArrowLogo} alt='' />
                     <h4>Sports.db</h4>

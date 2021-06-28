@@ -122,6 +122,7 @@ const HomePage = () => {
   return (
     <div>
       <Hero />
+<<<<<<< HEAD
       <div className='select'>
         <span className='selectedCountrie'> Countrie </span>
         <span className='selectedSport'> Sport </span>
@@ -143,10 +144,39 @@ const HomePage = () => {
                         {countrie.name_en}
                       </label>
                     );
+=======
+      <div className="select">
+        <span className="selectedCountrie"> Countrie </span>
+        <span className="selectedSport"> Sport </span>
+        <div className="form">
+          <div className="multiselect">
+            <div className="selectBox" >
+              <select>
+                <option>All Countries</option>
+              </select><div className="overSelect" onClick={() => setShown(!isShown)}></div>
+            </div>{isShown && (
+              <div className="checkboxes">
+                {allCountries &&
+                  allCountries.map((countrie) => {
+                    return (<label><input type="checkbox" checked={country === countrie.name_en} key={uuidv4()} value={countrie.name_en} onChange={(checked) => {
+                      let counrtys = checked.target.defaultValue.split(" ");
+                      let newCountry;
+                      if (counrtys.length > 1) {
+                        newCountry = counrtys.join("_");
+                        console.log(newCountry)
+                      } else {
+                        newCountry = counrtys.join(" ");
+                        console.log(newCountry)
+                      }
+                      return setCountry(newCountry)
+                    }} />{countrie.name_en}</label>)
+
+>>>>>>> 209d12ac8ae794aa2898724206fab311e5523caf
                   })}
               </div>
             )}
           </div>
+<<<<<<< HEAD
         </form>
         <form>
           <div class='multiselect'>
@@ -168,14 +198,31 @@ const HomePage = () => {
                         {sport.strSport}
                       </label>
                     );
+=======
+        </div>
+        < div className="form">
+          <div className="multiselect">
+            <div className="selectBox" >
+              <select>
+                <option>All Sports</option>
+              </select>
+              <div className="overSelect" onClick={() => setShow(!isShow)}> </div>
+            </div>{isShow && (
+              <div className="checkboxes"  >
+                {allSports &&
+                  allSports.map((sport) => {
+                    return (
+                      <label><input type="checkbox" checked={sport === sport.strSport} key={uuidv4()} value={sport.strSport} onChange={(checked) => setSport(checked.target.defaultValue)} />{sport.strSport}</label>)
+>>>>>>> 209d12ac8ae794aa2898724206fab311e5523caf
                   })}
               </div>
             )}
           </div>
-        </form>
+        </div>
       </div>
       {league
         ? letters.map((el, i) => {
+<<<<<<< HEAD
             let letter = myAlphabet[i];
             return (
               el[letter].length > 0 && (
@@ -193,6 +240,27 @@ const HomePage = () => {
             );
           })
         : null}
+=======
+          let letter = myAlphabet[i];
+          return (
+            el[letter].length > 0 && (
+              <List key={uuidv4()} heading={letter}>
+                {el[letter].map((o) => (
+                  <HomeCustomLink
+                    key={o.idLeague}
+                    linkTo={`/league/${o.idLeague}`}
+                    mainText={o.strLeague}
+                    secondText={o.strSport}
+                  />
+                ))}
+              </List>
+            )
+          );
+        })
+        : null} {
+        !league ? <h1 style={{ color: "white" }}>Not Available</h1> : null
+      }
+>>>>>>> 209d12ac8ae794aa2898724206fab311e5523caf
     </div>
   );
 };
