@@ -11,8 +11,8 @@ const HomeCustomLink = ({ linkTo, mainText, secondText }) => {
           <Link to={linkTo}>
             {mainText} <span>{secondText}</span>
           </Link>
+          <span className='underline'></span>
         </span>
-        <span className='underline'></span>
       </div>
     </>
   );
