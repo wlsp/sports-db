@@ -10,8 +10,6 @@ import './TeamDetailView.scss';
 const TeamDetailView = ({ match }) => {
   let [team, setTeam] = useState(null);
 
-  // 133604
-
   useEffect(() => {
     async function getData() {
       try {
@@ -56,7 +54,7 @@ const TeamDetailView = ({ match }) => {
                 location={el.strStadiumLocation}
                 established={el.intFormedYear}
                 sport={el.strSport}
-                descImg={el.strTeamJersey}
+                descImg={el.strStadiumThumb}
               />
 
               <CompetitionsSocial competitions='Competitions'>
@@ -85,7 +83,7 @@ const TeamDetailView = ({ match }) => {
                 <aside>
                   <p>{el.strStadium}</p>
                   <span>Home</span>
-                  <p>60338</p>
+                  <p>{el.intStadiumCapacity}</p>
                   <span>Capacity</span>
                 </aside>
               </div>
@@ -123,4 +121,3 @@ const TeamDetailView = ({ match }) => {
 };
 
 export default TeamDetailView;
-
