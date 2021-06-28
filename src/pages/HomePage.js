@@ -84,7 +84,7 @@ const HomePage = () => {
   return (
     <div>
       <Hero />
-      <Select />
+      <Select stateSport={sport} />
       {league
         ? letters.map((el, i) => {
             let letter = myAlphabet[i];

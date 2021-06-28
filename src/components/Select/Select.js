@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Select.scss';
 
-
 class Select extends Component {
     state = {
         isShown: false,

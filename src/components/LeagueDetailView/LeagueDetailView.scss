@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 /*  font-family: 'Open Sans', sans-serif; */
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+* {
+  .country {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 
-  .country{
     margin-top: 6%;
     .secImg {
       display: flex;
       width: 100%;
-      
+      overflow-y: hidden;
+
       div:nth-child(1) {
         height: 100%;
         width: 50%;
@@ -21,7 +22,7 @@
         margin-top: 3%;
 
         img {
-          width:660px ;
+          width: 660px;
           height: 800px;
         }
       }
@@ -39,8 +40,6 @@
           text-transform: uppercase;
           text-align: end;
           line-height: 169px;
-          
-          
         }
 
         h2 {
@@ -49,9 +48,7 @@
           text-align: end;
           font-family: 'Open Sans', sans-serif;
           font-weight: 700;
-          
         }
-
       }
     }
   }
@@ -67,29 +64,25 @@
     text-align: left;
     padding-left: 48px;
     text-transform: uppercase;
-    
+    transition-duration: 650ms;
+    transition-property: all;
+    transition-timing-function: ease-in;
 
     span {
       font-size: 18px;
       padding-left: 24px;
     }
-    
-   
   }
-  
+
   .linking:hover {
     font-size: 96px;
     cursor: pointer;
     transition-duration: 650ms;
-    transition-property:all;
+    transition-property: all;
     transition-timing-function: ease-in;
-    
   }
 
   .secLink {
     margin-top: 96px;
   }
 }
-
-
-
