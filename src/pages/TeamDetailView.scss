@@ -80,28 +80,19 @@
 
 @media (max-width: 768px) {
   .teamDetailView {
-    box-sizing: border-box;
-    object-fit: contain;
     .teamDetailView-about {
-      margin-top: 3rem;
       display: block;
-      padding-right: 0;
+      padding: 0;
       aside {
         width: 100%;
         p {
           position: static;
           text-align: center;
           margin: 0;
-          text-transform: uppercase;
-          font-size: 5rem;
-          color: black;
-          -webkit-text-stroke-width: 2px;
-          -webkit-text-stroke-color: red;
+          font-size: 4rem;
+
           transform: rotate(0deg);
         }
-      }
-      .aboutTeam {
-        width: 70%;
       }
     }
     .teamDetailView-stadium {
@@ -109,26 +100,93 @@
       flex-direction: column-reverse;
       align-items: center;
       .aboutTeam {
-        width: 70%;
         h2 {
           margin-top: 4rem;
           padding-left: 0;
           margin-bottom: 0;
-          font-size: 4rem;
+          font-size: 3rem;
           text-align: center;
         }
       }
       aside {
-        width: 30%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        p {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .teamDetailView {
+    .teamDetailView-about {
+      aside {
+        width: 100%;
         p {
           font-size: 3rem;
-          text-align: center;
-          margin-bottom: 0.5rem;
-          font-weight: bold;
+        }
+      }
+      .aboutTeam {
+        width: 100%;
+        h2 {
+          font-size: 2.5rem;
+        }
+        article {
+          width: 100%;
+          p {
+            padding: 1rem;
+          }
+        }
+      }
+    }
+    .teamDetailView-stadium {
+      .aboutTeam {
+        width: 100%;
+        h2 {
+          font-size: 2.5rem;
+        }
+        article {
+          width: 100%;
+          p {
+            padding: 1rem;
+          }
+        }
+      }
+      aside {
+        p {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .teamDetailView {
+    .teamDetailView-about {
+      aside {
+        width: 100%;
+        p {
+          font-size: 2rem;
+        }
+      }
+      .aboutTeam {
+        width: 100%;
+        h2 {
+          font-size: 2rem;
+        }
+      }
+    }
+    .teamDetailView-stadium {
+      .aboutTeam {
+        width: 100%;
+        h2 {
+          font-size: 2rem;
+        }
+      }
+      aside {
+        p {
+          font-size: 1.6rem;
         }
       }
     }

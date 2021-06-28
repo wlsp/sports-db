@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './Select.scss';
 
-
 class Select extends Component {
     state = {
         isShown: false,
         isShow: false,
+        checked: false,
         searchTermCountrie: '',
         searchTermSport: '',
         selectedCountrie: false,
@@ -16,16 +16,6 @@ class Select extends Component {
             test3: false,
             test4: false,
             test5: false,
-            test6: false,
-            test7: false,
-            test8: false,
-            test9: false,
-            test10: false,
-            test11: false,
-            test12: false,
-            test13: false,
-            test14: false,
-            test15: false,
             test16: false,
             test17: false,
             test18: false,
@@ -36,8 +26,14 @@ class Select extends Component {
     }
     selectedCountrie = (e) => {
         e.preventDefault();
-        var { name } = e.target;
-        this.setState({ searchTermCountrie: name })
+        var { value, checked } = e.target;
+        this.setState({
+            searchTermCountrie: value,
+            checked: !this.state.checked
+        })
+        console.log(this.state.checked)
+        console.log(this.state.searchTermCountrie)
+        console.log(e.target)
         this.setState({ isShown: !this.state.isShown });
         this.setState({ selectedCountrie: !this.state.selectedCountrie })
     }
@@ -69,16 +65,11 @@ class Select extends Component {
                             <div class="overSelect"> </div>
                         </div>
                         <data id="checkboxes" className={this.state.isShown ? "show" : "hide"} >
-                            <label for="1"><input id="1" name="countrie1" type="checkbox" onChange={(e) => this.selectedCountrie(e)} />First checkbox</label>
-                            <label for="2"><input id="2" name="countrie2" type="checkbox" onChange={(e) => this.selectedCountrie(e)} />Second checkbox</label>
-                            <label for="3"><input id="3" name="countrie3" type="checkbox" onChange={(e) => this.selectedCountrie(e)} />Third checkbox</label>
-                            <label for="4"><input id="4" name="countrie4" type="checkbox" onChange={(e) => this.selectedCountrie(e)} />First checkbox</label>
-                            <label for="5"><input id="5" name="countrie5" type="checkbox" onChange={(e) => this.selectedCountrie(e)} />Second checkbox</label>
-                            <label for="6"><input id="6" name="countrie6" type="checkbox" onChange={(e) => this.selectedCountrie(e)} />Third checkbox</label>
-                            <label for="7"><input id="7" name="countrie7" type="checkbox" onChange={(e) => this.selectedCountrie(e)} />First checkbox</label>
-                            <label for="8"><input id="8" name="countrie8" type="checkbox" onChange={(e) => this.selectedCountrie(e)} />Second checkbox</label>
-                            <label for="9"><input id="9" name="countrie9" type="checkbox" onChange={(e) => this.selectedCountrie(e)} />Third checkbox</label>
-                            <label for="10"><input id="10" name="countrie10" type="checkbox" onChange={(e) => this.selectedCountrie(e)} />First checkbox</label>
+                            <label for="1"><input id="1" value="countrie1" type="checkbox" onChange={(e) => this.selectedCountrie(e)} defaultChecked={this.state.checked} />First checkbox</label>
+                            <label for="2"><input id="2" value="countrie2" type="checkbox" onChange={(e) => this.selectedCountrie(e)} />Second checkbox</label>
+                            <label for="3"><input id="3" value="countrie3" type="checkbox" onChange={(e) => this.selectedCountrie(e)} />Third checkbox</label>
+                            <label for="4"><input id="4" value="countrie4" type="checkbox" onChange={(e) => this.selectedCountrie(e)} />First checkbox</label>
+                            <label for="5"><input id="5" value="countrie5" type="checkbox" onChange={(e) => this.selectedCountrie(e)} />Second checkbox</label>
                         </data>
                     </div>
                 </form>
@@ -96,11 +87,6 @@ class Select extends Component {
                             <label for="18"><input id="18" name="sport3" type="checkbox" onChange={(e) => this.selectedSport(e)} />Third checkbox</label>
                             <label for="19"><input id="19" name="sport4" type="checkbox" onChange={(e) => this.selectedSport(e)} />First checkbox</label>
                             <label for="20"><input id="20" name="sport5" type="checkbox" onChange={(e) => this.selectedSport(e)} />Second checkbox</label>
-                            <label for="21"><input id="21" name="sport6" type="checkbox" onChange={(e) => this.selectedSport(e)} />Third checkbox</label>
-                            <label for="22"><input id="22" name="sport7" type="checkbox" onChange={(e) => this.selectedSport(e)} />First checkbox</label>
-                            <label for="23"><input id="23" name="sport8" type="checkbox" onChange={(e) => this.selectedSport(e)} />Second checkbox</label>
-                            <label for="24"><input id="24" name="sport9" type="checkbox" onChange={(e) => this.selectedSport(e)} />Third checkbox</label>
-                            <label for="25"><input id="25" name="sport10" type="checkbox" onChange={(e) => this.selectedSport(e)} />First checkbox</label>
                         </data>
                     </div>
                 </form>

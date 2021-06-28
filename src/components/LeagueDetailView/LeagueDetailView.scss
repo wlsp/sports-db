@@ -5,6 +5,8 @@
   
 
   .country{
+* {
+  .country {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,7 +16,7 @@
       display: flex;
       width: 100%;
       overflow-y: hidden;
-      
+
       div:nth-child(1) {
         height: 100%;
         width: 50%;
@@ -24,7 +26,7 @@
         margin-top: 3%;
 
         img {
-          width:660px ;
+          width: 660px;
           height: 800px;
           margin: 0;
         }
@@ -57,7 +59,6 @@
           margin: 0;
           
         }
-
       }
     }
   }
@@ -74,18 +75,15 @@
     padding-left: 48px;
     text-transform: uppercase;
     transition-duration: 650ms;
-    transition-property:all;
+    transition-property: all;
     transition-timing-function: ease-in;
-    
 
     span {
       font-size: 18px;
       padding-left: 24px;
     }
-    
-   
   }
-  
+
   .linking:hover {
     font-size: 66px;
     cursor: pointer;
@@ -286,9 +284,8 @@
     font-size: 66px;
     cursor: pointer;
     transition-duration: 650ms;
-    transition-property:all;
+    transition-property: all;
     transition-timing-function: ease-in;
-    
   }
 
   .secLink {
@@ -491,3 +488,5 @@
     margin-top: 3%;
   }
  }
+}
+  }
