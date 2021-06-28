@@ -7,10 +7,15 @@
   box-sizing: border-box;
 
   .country{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
     margin-top: 6%;
     .secImg {
       display: flex;
       width: 100%;
+      overflow-y: hidden;
       
       div:nth-child(1) {
         height: 100%;
@@ -67,6 +72,9 @@
     text-align: left;
     padding-left: 48px;
     text-transform: uppercase;
+    transition-duration: 650ms;
+    transition-property:all;
+    transition-timing-function: ease-in;
     
 
     span {
