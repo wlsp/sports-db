@@ -1,14 +1,14 @@
-import img1 from '../../images/englishpremierleague.png'
 
-const ImageEngLeague = () => {
+
+const ImageEngLeague = (props) => {
     return (
         <section className="secImg">
             <div>
-                <img src={img1} alt="" />
+                <img src={props.image} alt="Rasen" />
             </div>
             <div>
-                <h1>English Premier League</h1>
-                <h2>Soccer</h2>
+                <h1>{props.heading1}</h1>
+                <h2>{props.heading2}</h2>
             </div>
         </section>
     );
