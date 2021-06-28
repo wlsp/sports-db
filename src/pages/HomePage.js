@@ -9,8 +9,8 @@ import HomeCustomLink from '../components/homePage/HomeCustomLink';
 
 const HomePage = () => {
   let [league, setLeague] = useState(null);
-  let [country, setCountry] = useState('England');
-  let [sport, setSport] = useState('Soccer');
+  let [country, setCountry] = useState('');
+  let [sport, setSport] = useState('');
 
   useEffect(() => {
     let url;
