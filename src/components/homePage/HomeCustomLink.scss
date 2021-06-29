@@ -20,7 +20,7 @@
       background-color: #e83539;
       right: 30px;
       bottom: 20px;
-      z-index: -9;
+      z-index: -1;
       transform: translateX(-105%);
       transition: all 0.3s linear;
     }
@@ -67,6 +67,46 @@
     .linkHolder {
       span {
         font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .homeCustomLink {
+    margin-left: 0;
+    a {
+      font-size: 1.6rem;
+    }
+    .linkHolder {
+      span {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .homeCustomLink {
+    a {
+      font-size: 1.2rem;
+    }
+    .linkHolder {
+      span {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .homeCustomLink {
+    a {
+      font-size: 0.9rem;
+    }
+    .linkHolder {
+      span {
+        font-size: 0.7rem;
       }
     }
   }
