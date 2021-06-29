@@ -1,6 +1,6 @@
 import React from 'react';
 import './Description.scss';
-// import descImg from '../../images/w1anwa.png';
+import notFound from '../../images/not-found.png';
 
 const Description = ({
   name,
@@ -24,7 +24,11 @@ const Description = ({
         <span>Sport</span>
       </div>
       <div>
-        <img src={descImg} alt='description' />
+        {descImg ? (
+          <img src={descImg} alt='description' />
+        ) : (
+          <img src={notFound} alt='description' />
+        )}
       </div>
     </div>
   );
