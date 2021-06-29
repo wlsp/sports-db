@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import {
   BrowserRouter as Router,
@@ -14,9 +14,18 @@ import LeagueDetailView from './pages/LeagueDetailView';
 import HomePage from './pages/HomePage';
 import NotFound from './pages/NotFound';
 
-function App({ history }) {
+function App() {
   let [searchLetter, setSearchLetter] = useState('');
   let [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    let myInterval = setInterval(() => {
+      setSearchTerm(searchLetter);
+    }, 300);
+    return () => {
+      clearInterval(myInterval);
+    };
+  }, [searchLetter]);
 
   console.log('search term is: ', searchLetter);
   console.log('search term is: ', searchTerm);

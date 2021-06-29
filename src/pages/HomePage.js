@@ -7,7 +7,8 @@ import Hero from '../components/Hero/Hero';
 import List from '../components/homePage/List';
 import HomeCustomLink from '../components/homePage/HomeCustomLink';
 
-const HomePage = () => {
+const HomePage = ({ searchTerm }) => {
+  console.log('search term from Home Page: ', searchTerm);
   let [league, setLeague] = useState(null);
   let [country, setCountry] = useState('');
   let [Sport, setSport] = useState('');
@@ -17,27 +18,41 @@ const HomePage = () => {
   const [isShow, setShow] = useState(false);
 
   useEffect(() => {
+    const abortCtrl = new AbortController();
+    const opts = { signal: abortCtrl.signal };
+
     let url;
 
-    if (country && Sport) {
-      url = `https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?c=${country}&s=${Sport}`;
-    } else if (country) {
-      url = `https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?c=${country}`;
+    if (!searchTerm) {
+      if (country && Sport) {
+        url = `https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?c=${country}&s=${Sport}`;
+      } else if (country) {
+        url = `https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?c=${country}`;
+      } else {
+        url = `https://www.thesportsdb.com/api/v1/json/1/all_leagues.php`;
+      }
     } else {
-      url = `https://www.thesportsdb.com/api/v1/json/1/all_leagues.php`;
+      url = `https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${searchTerm}`;
     }
 
     async function getData() {
       try {
-        let { data } = await axios.get(url);
+        let { data } = await axios.get(url, opts);
 
         setLeague(data);
+
+        console.log('search box state from home page: ', data);
       } catch (error) {
         console.log(error);
       }
     }
+
     getData();
-  }, [Sport, country]);
+
+    return () => {
+      abortCtrl.abort();
+    };
+  }, [Sport, country, searchTerm]);
 
   useEffect(() => {
     async function getCountry() {
@@ -125,13 +140,22 @@ const HomePage = () => {
     <div>
       <Hero />
       <div className='select'>
-        {
-          country &&
-          <span className="selectedCountrie"><span className="close" onClick={() => setCountry('')} >X</span> {country.split('_').join(' ')} </span>
-        }
-        {Sport &&
-          <span className="selectedSport" ><span className="close" onClick={() => setSport('')} >X</span> {Sport.split('_').join(' ')} </span>
-        }
+        {country && (
+          <span className='selectedCountrie'>
+            <span className='close' onClick={() => setCountry('')}>
+              X
+            </span>{' '}
+            {country.split('_').join(' ')}{' '}
+          </span>
+        )}
+        {Sport && (
+          <span className='selectedSport'>
+            <span className='close' onClick={() => setSport('')}>
+              X
+            </span>{' '}
+            {Sport.split('_').join(' ')}{' '}
+          </span>
+        )}
         <div className='form'>
           <div className='multiselect'>
             <div className='selectBox'>
@@ -189,9 +213,7 @@ const HomePage = () => {
                       <label key={uuidv4()}>
                         <input
                           type='checkbox'
-                          checked={
-                            Sport === sport.strSport
-                          }
+                          checked={Sport === sport.strSport}
                           value={sport.strSport}
                           onChange={(checked) => {
                             let newSport = prepareQueryString(
@@ -210,9 +232,8 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      {
-        league
-          ? letters.map((el, i) => {
+      {league
+        ? letters.map((el, i) => {
             let letter = myAlphabet[i];
             return (
               el[letter].length > 0 && (
@@ -229,9 +250,20 @@ const HomePage = () => {
               )
             );
           })
-          : null
-      }
-    </div >
+        : null}
+      {league && league.teams
+        ? league.teams.map((team) => {
+            return (
+              <HomeCustomLink
+                key={team.idTeam}
+                linkTo={`/team/${team.idTeam}`}
+                mainText={team.strTeam}
+                secondText={team.strSport}
+              />
+            );
+          })
+        : null}
+    </div>
   );
 };
 
