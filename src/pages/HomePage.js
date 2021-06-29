@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 
-import '../components/Select/Select.scss';
+import '../pages/Select.scss';
 import Hero from '../components/Hero/Hero';
 import List from '../components/homePage/List';
 import HomeCustomLink from '../components/homePage/HomeCustomLink';
