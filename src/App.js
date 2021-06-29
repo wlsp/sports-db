@@ -16,6 +16,7 @@ import NotFound from './pages/NotFound';
 
 function App({ history }) {
   let [searchLetter, setSearchLetter] = useState('');
+  let [searchTerm, setSearchTerm] = useState('');
 
   console.log('search term is: ', searchLetter);
 
@@ -23,7 +24,8 @@ function App({ history }) {
     console.log(e);
     setSearchLetter(searchLetter + e.key);
     if (e.key === 'Enter') {
-      history.push(`/${searchLetter}`);
+      setSearchTerm(searchLetter);
+      history.push(`/`);
     }
   }
 
@@ -33,7 +35,11 @@ function App({ history }) {
       <Switch>
         <Route path='/team/:id' exact component={TeamDetailView} />
         <Route path='/league/:id' exact component={LeagueDetailView} />
-        <Route path='/:id?' exact component={HomePage} />
+        <Route
+          path='/'
+          exact
+          component={() => <HomePage searchTerm={searchTerm} />}
+        />
         <Route exact path='*' component={NotFound} />
       </Switch>
     </Router>
