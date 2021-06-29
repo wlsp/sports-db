@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import './Navbar.scss';
 import ArrowLogo from '../../images/arrow-logo.svg';
 import SearchIcon from '../../images/search-icon.svg';
 
-const Header = ({ searchTerm, appState }) => {
+const Header = ({ searchTerm, appState, history }) => {
   console.log('search Term:', searchTerm);
   return (
     <nav>
@@ -15,7 +15,13 @@ const Header = ({ searchTerm, appState }) => {
           <h4>Sports.db</h4>
         </span>
       </Link>
-      <form className='search-box'>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          history.push('/');
+        }}
+        className='search-box'
+      >
         <span className='search-btn'>
           <img src={SearchIcon} alt='' />
         </span>
@@ -23,7 +29,7 @@ const Header = ({ searchTerm, appState }) => {
           className='search'
           type='text'
           value={appState}
-          onKeyDown={(e) => {
+          onChange={(e) => {
             searchTerm(e);
           }}
         ></input>
@@ -32,4 +38,4 @@ const Header = ({ searchTerm, appState }) => {
   );
 };
 
-export default Header;
+export default withRouter(Header);

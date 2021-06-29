@@ -19,14 +19,12 @@ function App({ history }) {
   let [searchTerm, setSearchTerm] = useState('');
 
   console.log('search term is: ', searchLetter);
+  console.log('search term is: ', searchTerm);
 
   function handleSearchTerm(e) {
     console.log(e);
-    setSearchLetter(searchLetter + e.key);
-    if (e.key === 'Enter') {
-      setSearchTerm(searchLetter);
-      history.push(`/`);
-    }
+
+    setSearchLetter(e.target.value);
   }
 
   return (
