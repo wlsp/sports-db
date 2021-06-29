@@ -1,9 +1,7 @@
 .select {
   display: inline-block;
   width: 100%;
-  height: 20vmin;
-  text-align: right;
-  padding: 5rem;
+  height: 30vmin;
   .selectedCountrie,
   .selectedSport {
     padding: 0.813rem;
@@ -19,7 +17,7 @@
   }
   .form {
     display: inline-block;
-    padding-left: 5rem;
+    padding-left: 2rem;
   }
   .multiselect {
     width: 23.75rem;
@@ -106,67 +104,85 @@
       margin: 2% 10%;
     }
     .sports {
+      width: 10rem;
+    }
+    .checkboxes {
       width: 20rem;
     }
-      .checkboxes {
-        width: 20rem;
-      }
-      .sportsboxes {
-        width: 20rem;
-        z-index: 10;
-      }
-      .checkboxes label {
-        font-size: .9rem; 
-      }
+    .sportsboxes {
+      width: 10rem;
+      z-index: 10;
     }
+    .checkboxes label {
+      font-size: 0.9rem;
+    }
+  }
 }
 @media (max-width: 992px) {
   .select {
-    margin: 0 auto;
     padding: 2rem;
     .selectedCountrie,
     .selectedSport {
       padding: 0.5rem;
       border: 0.188rem solid white;
-      margin: 0 1rem 0 -.5rem; 
+      margin: 0 1rem 0 -0.5rem;
     }
     .multiselect {
       margin: 2% 10%;
-      width: 18.5rem;
+      width: 15rem;
     }
-      .checkboxes {
-        width: 18.5rem;
+    .checkboxes {
+      width: 15rem;
+    }
+    .checkboxes label {
+      font-size: 0.7rem;
+      input[type="checkbox"] {
+        -webkit-appearance: initial;
+        appearance: initial;
+        width: 0.85rem;
+        height: 0.85rem;
       }
-      .checkboxes label {
-        font-size: .7rem; 
-      }
+    }
+    .sports {
+      width: 10rem;
+    }
+    .sportsboxes {
+      width: 10rem;
+      z-index: 10;
     }
   }
+}
 
 @media (max-width: 768px) {
   .select {
     .multiselect {
-      width: 15.5rem;
-      margin: 2% 10%;
+      width: 14.5rem;
+      margin: 0 5%;
     }
-      .checkboxes {
-        width: 15.5rem;
-      }
-      .checkboxes label {
-        font-size: .8rem;
-        input[type="checkbox"] {
-          -webkit-appearance: initial;
-          appearance: initial;
-          width: 0.938rem;
-          height: 0.938rem;
-            &:checked:after {
-              font-size: 1.563rem;
-  
-            }
-          }
+    .checkboxes {
+      width: 14.5rem;
+    }
+    .checkboxes label {
+      font-size: 0.8rem;
+      input[type="checkbox"] {
+        -webkit-appearance: initial;
+        appearance: initial;
+        width: 0.938rem;
+        height: 0.938rem;
+        &:checked:after {
+          font-size: 1.563rem;
         }
       }
     }
+    .sports {
+      width: 10rem;
+    }
+    .sportsboxes {
+      width: 10rem;
+      z-index: 10;
+    }
+  }
+}
 
 @media (max-width: 576px) {
 }

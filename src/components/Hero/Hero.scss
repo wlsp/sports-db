@@ -6,7 +6,6 @@ header {
     height: 43.75rem;
     position: relative;
     left: -17%;
-    z-index: -1;
     margin: 0;
     padding: 0;
     img {
@@ -37,7 +36,7 @@ header {
     position: fixed;
     right: 5%;
     bottom: 3%;
-    z-index: 10;
+    z-index: 1;
     .titleWrapper {
       position: relative;
       img {
@@ -74,6 +73,7 @@ header {
   header {
     figure {
       figcaption {
+        top: 35%;
         h1 {
           font-size: 6rem;
         }
@@ -83,7 +83,14 @@ header {
 }
 @media (max-width: 576px) {
   header {
+    height: 80%;
     figure {
+      width: 85%;
+      height: 20.75rem;
+      position: relative;
+      left: -5%;
+      margin: 0;
+      padding: 0;
       figcaption {
         h1 {
           font-size: 4rem;
@@ -94,7 +101,14 @@ header {
 }
 @media (max-width: 450px) {
   header {
+    height: 80%;
     figure {
+      width: 85%;
+      height: 20.75rem;
+      position: relative;
+      left: -5%;
+      margin: 0;
+      padding: 0;
       figcaption {
         h1 {
           font-size: 3rem;
