@@ -20,7 +20,7 @@ function Country({ match }) {
 
         async function getData() {
             try {
-                let { data } = await axios.get("https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=4328");
+                let { data } = await axios.get(`https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=${match.params.id}`);
 
                 console.log(data);
                 setState(data.teams)
