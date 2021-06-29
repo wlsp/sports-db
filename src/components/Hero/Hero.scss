@@ -26,53 +26,79 @@ header {
       padding: 0;
       width: 80%;
       h1 {
-        font-size: 12rem;
+        font-size: 11rem;
         width: 100%;
         margin: 0;
         padding: 0;
       }
     }
   }
-  aside {
+  .titleContainer {
     position: fixed;
     right: 5%;
     bottom: 3%;
-    z-index: 1;
-    .arrow-up {
-      display: inline-block;
+    z-index: 10;
+    .titleWrapper {
       position: relative;
-      width: 80px;
-      height: 100px;
-      background-position: 0% 100%;
-      background-repeat: no-repeat;
-      background-size: 0% 100%;
-      transition: all 1s;
-      &:hover {
-        background: linear-gradient(to top, #e83539 100%, #0f0f0f 50%);
-        background-size: 0% 100%;
-      }
-      -webkit-clip-path: polygon(
-        50% 0,
-        93% 57%,
-        65% 57%,
-        64% 100%,
-        36% 100%,
-        36% 57%,
-        7% 57%
-      );
-      clip-path: polygon(
-        50% 0,
-        93% 57%,
-        65% 57%,
-        64% 100%,
-        36% 100%,
-        36% 57%,
-        7% 57%
-      );
       img {
         width: 100%;
         height: 100%;
-        position: absolute;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  header {
+    figure {
+      figcaption {
+        h1 {
+          font-size: 9rem;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 992px) {
+  header {
+    figure {
+      figcaption {
+        h1 {
+          font-size: 8rem;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  header {
+    figure {
+      figcaption {
+        h1 {
+          font-size: 6rem;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 576px) {
+  header {
+    figure {
+      figcaption {
+        h1 {
+          font-size: 4rem;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 450px) {
+  header {
+    figure {
+      figcaption {
+        h1 {
+          font-size: 3rem;
+        }
       }
     }
   }

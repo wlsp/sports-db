@@ -11,8 +11,8 @@ const Hero = () => {
                 <h1>Find Your League</h1>
             </figcaption>
         </figure>
-        <aside>
-            <span className="arrow-up">
+        <aside className="titleContainer">
+            <span className="titleWrapper">
                 <img src={Arrowup} alt='Up-Arrow' />
             </span>
         </aside>
