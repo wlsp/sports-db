@@ -10,7 +10,7 @@ import HomeCustomLink from '../components/homePage/HomeCustomLink';
 const HomePage = () => {
   let [league, setLeague] = useState(null);
   let [country, setCountry] = useState('');
-  let [sport, setSport] = useState('');
+  let [Sport, setSport] = useState('');
   let [allCountries, setAllCountries] = useState(null);
   let [allSports, setAllSports] = useState(null);
   const [isShown, setShown] = useState(false);
@@ -19,8 +19,8 @@ const HomePage = () => {
   useEffect(() => {
     let url;
 
-    if (country && sport) {
-      url = `https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?c=${country}&s=${sport}`;
+    if (country && Sport) {
+      url = `https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?c=${country}&s=${Sport}`;
     } else if (country) {
       url = `https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?c=${country}`;
     } else {
@@ -38,7 +38,7 @@ const HomePage = () => {
       }
     }
     getData();
-  }, [sport, country]);
+  }, [Sport, country]);
 
   useEffect(() => {
     async function getCountry() {
@@ -187,7 +187,7 @@ const HomePage = () => {
                       <label>
                         <input
                           type='checkbox'
-                          checked={sport === sport.strSport}
+                          checked={Sport === sport.strSport}
                           key={uuidv4()}
                           value={sport.strSport}
                           onChange={(checked) =>
