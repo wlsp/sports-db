@@ -30,8 +30,7 @@ const HomePage = () => {
     async function getData() {
       try {
         let { data } = await axios.get(url);
-        console.log(url);
-        console.log(data);
+
         setLeague(data);
       } catch (error) {
         console.log(error);
@@ -48,7 +47,6 @@ const HomePage = () => {
           'https://www.thesportsdb.com/api/v1/json/1/all_countries.php'
         );
         setAllCountries(data.countries);
-        console.log(data);
       } catch (error) {
         console.log(error);
       }
@@ -65,7 +63,6 @@ const HomePage = () => {
           'https://www.thesportsdb.com/api/v1/json/1/all_sports.php'
         );
         setAllSports(data.sports);
-        console.log(data);
       } catch (error) {
         console.log(error);
       }
@@ -73,6 +70,18 @@ const HomePage = () => {
     getSport();
     // Hier läuft das Array NUR einmal!
   }, []);
+
+  function prepareQueryString(url) {
+    let newUrl;
+    let myArray = url.split(' ');
+    if (myArray.length > 1) {
+      newUrl = myArray.join('_');
+    } else {
+      newUrl = myArray.join(' ');
+    }
+
+    return newUrl;
+  }
 
   function createAlphabet(start, end) {
     return new Array(end - start + 1)
@@ -95,7 +104,7 @@ const HomePage = () => {
       );
       let counter = 0;
       for (let item of sortedState) {
-        let letter = item.strLeague.split('')[0];
+        let letter = item.strLeague[0];
         if (letter == myAlphabet[counter]) {
           letters[counter][letter].push(item);
         } else {
@@ -103,15 +112,9 @@ const HomePage = () => {
         }
       }
     } else if (league.countrys) {
-      let counter = 0;
-      for (let item of league.countrys) {
-        let letter = item.strCountry.split('')[0];
-        if (letter == myAlphabet[counter]) {
-          letters[counter][letter].push(item);
-        } else {
-          counter++;
-        }
-      }
+      let letter = league.countrys[0].strCountry[0];
+      let indexToPush = myAlphabet.indexOf(letter);
+      letters[indexToPush][letter] = league.countrys;
     }
   }
 
@@ -144,20 +147,16 @@ const HomePage = () => {
                       <label>
                         <input
                           type='checkbox'
-                          checked={country === countrie.name_en}
+                          checked={
+                            country === prepareQueryString(countrie.name_en)
+                          }
                           key={uuidv4()}
                           value={countrie.name_en}
                           onChange={(checked) => {
-                            let counrtys =
-                              checked.target.defaultValue.split(' ');
-                            let newCountry;
-                            if (counrtys.length > 1) {
-                              newCountry = counrtys.join('_');
-                              console.log(newCountry);
-                            } else {
-                              newCountry = counrtys.join(' ');
-                              console.log(newCountry);
-                            }
+                            let newCountry = prepareQueryString(
+                              checked.target.defaultValue
+                            );
+
                             return setCountry(newCountry);
                           }}
                         />
