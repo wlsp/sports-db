@@ -49,7 +49,7 @@ const TeamDetailView = ({ match }) => {
           return (
             <React.Fragment key={el.idTeam}>
               <Description
-                name={el.strAlternate.split(' ')[0]}
+                name={el.strTeam}
                 country={el.strCountry}
                 location={el.strStadiumLocation}
                 established={el.intFormedYear}

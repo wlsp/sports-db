@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 
-import '../components/Select/Select.scss'
+import '../components/Select/Select.scss';
 import Hero from '../components/Hero/Hero';
 import List from '../components/homePage/List';
 import HomeCustomLink from '../components/homePage/HomeCustomLink';
@@ -10,7 +10,7 @@ import HomeCustomLink from '../components/homePage/HomeCustomLink';
 const HomePage = () => {
   let [league, setLeague] = useState(null);
   let [country, setCountry] = useState('');
-  let [sport, setSport] = useState('');
+  let [Sport, setSport] = useState('');
   let [allCountries, setAllCountries] = useState(null);
   let [allSports, setAllSports] = useState(null);
   const [isShown, setShown] = useState(false);
@@ -19,8 +19,8 @@ const HomePage = () => {
   useEffect(() => {
     let url;
 
-    if (country && sport) {
-      url = `https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?c=${country}&s=${sport}`;
+    if (country && Sport) {
+      url = `https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?c=${country}&s=${Sport}`;
     } else if (country) {
       url = `https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?c=${country}`;
     } else {
@@ -30,45 +30,58 @@ const HomePage = () => {
     async function getData() {
       try {
         let { data } = await axios.get(url);
-        console.log(url);
-        console.log(data);
+
         setLeague(data);
       } catch (error) {
         console.log(error);
       }
     }
     getData();
-  }, [sport, country]);
+  }, [Sport, country]);
 
   useEffect(() => {
-
     async function getCountry() {
       try {
         // Object destructuring = { data } // So bekommen wir nur die Daten die wir von der API brauchen!
-        let { data } = await axios.get('https://www.thesportsdb.com/api/v1/json/1/all_countries.php');
+        let { data } = await axios.get(
+          'https://www.thesportsdb.com/api/v1/json/1/all_countries.php'
+        );
         setAllCountries(data.countries);
-        console.log(data);
       } catch (error) {
         console.log(error);
       }
-    } getCountry();
+    }
+    getCountry();
     // Hier läuft das Array NUR einmal!
-  }, [])
+  }, []);
 
   useEffect(() => {
-
     async function getSport() {
       try {
         // Object destructuring = { data } // So bekommen wir nur die Daten die wir von der API brauchen!
-        let { data } = await axios.get('https://www.thesportsdb.com/api/v1/json/1/all_sports.php');
+        let { data } = await axios.get(
+          'https://www.thesportsdb.com/api/v1/json/1/all_sports.php'
+        );
         setAllSports(data.sports);
-        console.log(data);
       } catch (error) {
         console.log(error);
       }
-    } getSport();
+    }
+    getSport();
     // Hier läuft das Array NUR einmal!
-  }, [])
+  }, []);
+
+  function prepareQueryString(url) {
+    let newUrl;
+    let myArray = url.split(' ');
+    if (myArray.length > 1) {
+      newUrl = myArray.join('_');
+    } else {
+      newUrl = myArray.join(' ');
+    }
+
+    return newUrl;
+  }
 
   function createAlphabet(start, end) {
     return new Array(end - start + 1)
@@ -91,7 +104,7 @@ const HomePage = () => {
       );
       let counter = 0;
       for (let item of sortedState) {
-        let letter = item.strLeague.split('')[0];
+        let letter = item.strLeague[0];
         if (letter == myAlphabet[counter]) {
           letters[counter][letter].push(item);
         } else {
@@ -99,15 +112,9 @@ const HomePage = () => {
         }
       }
     } else if (league.countrys) {
-      let counter = 0;
-      for (let item of league.countrys) {
-        let letter = item.strCountry.split('')[0];
-        if (letter == myAlphabet[counter]) {
-          letters[counter][letter].push(item);
-        } else {
-          counter++;
-        }
-      }
+      let letter = league.countrys[0].strCountry[0];
+      let indexToPush = myAlphabet.indexOf(letter);
+      letters[indexToPush][letter] = league.countrys;
     }
   }
 
@@ -118,61 +125,103 @@ const HomePage = () => {
   return (
     <div>
       <Hero />
-      <div className="select">
-        <span className="selectedCountrie"> Countrie </span>
-        <span className="selectedSport"> Sport </span>
-        <form>
-          <div class="multiselect">
-            <div class="selectBox" >
+      <div className='select'>
+        <span className='selectedCountrie'> Countrie </span>
+        <span className='selectedSport'> Sport </span>
+        <div className='form'>
+          <div className='multiselect'>
+            <div className='selectBox'>
               <select>
                 <option>All Countries</option>
-              </select><div class="overSelect" onClick={() => setShown(!isShown)}></div>
-            </div>{isShown && (
-              <div className="checkboxes">
+              </select>
+              <div
+                className='overSelect'
+                onClick={() => setShown(!isShown)}
+              ></div>
+            </div>
+            {isShown && (
+              <div className='checkboxes'>
                 {allCountries &&
                   allCountries.map((countrie) => {
-                    return (<label><input type="checkbox" />{countrie.name_en}</label>)
+                    return (
+                      <label>
+                        <input
+                          type='checkbox'
+                          checked={
+                            country === prepareQueryString(countrie.name_en)
+                          }
+                          key={uuidv4()}
+                          value={countrie.name_en}
+                          onChange={(checked) => {
+                            let newCountry = prepareQueryString(
+                              checked.target.defaultValue
+                            );
+
+                            return setCountry(newCountry);
+                          }}
+                        />
+                        {countrie.name_en}
+                      </label>
+                    );
                   })}
-              </div>)}
+              </div>
+            )}
           </div>
-        </form>
-        <form>
-          <div class="multiselect">
-            <div class="selectBox" >
+        </div>
+        <div className='form'>
+          <div className='multiselect'>
+            <div className='selectBox'>
               <select>
                 <option>All Sports</option>
               </select>
-              <div class="overSelect" onClick={() => setShow(!isShow)}> </div>
-            </div>{isShow && (
-              <div className="checkboxes"  >
+              <div className='overSelect' onClick={() => setShow(!isShow)}>
+                {' '}
+              </div>
+            </div>
+            {isShow && (
+              <div className='checkboxes'>
                 {allSports &&
                   allSports.map((sport) => {
                     return (
-                      <label><input type="checkbox" />{sport.strSport}</label>)
+                      <label>
+                        <input
+                          type='checkbox'
+                          checked={Sport === sport.strSport}
+                          key={uuidv4()}
+                          value={sport.strSport}
+                          onChange={(checked) =>
+                            setSport(checked.target.defaultValue)
+                          }
+                        />
+                        {sport.strSport}
+                      </label>
+                    );
                   })}
-              </div>)}
+              </div>
+            )}
           </div>
-        </form>
+        </div>
       </div>
       {league
         ? letters.map((el, i) => {
-          let letter = myAlphabet[i];
-          return (
-            el[letter].length > 0 && (
-              <List key={uuidv4()} heading={letter}>
-                {el[letter].map((o) => (
-                  <HomeCustomLink
-                    key={o.idLeague}
-                    linkTo={`/league/${o.idLeague}`}
-                    mainText={o.strLeague}
-                    secondText={o.strSport}
-                  />
-                ))}
-              </List>
-            )
-          );
-        })
-        : null}
+            let letter = myAlphabet[i];
+            return (
+              el[letter].length > 0 && (
+                <List key={uuidv4()} heading={letter}>
+                  {el[letter].map((o) => (
+                    <HomeCustomLink
+                      key={o.idLeague}
+                      linkTo={`/league/${o.idLeague}`}
+                      mainText={o.strLeague}
+                      secondText={o.strSport}
+                    />
+                  ))}
+                </List>
+              )
+            );
+          })
+        : null}{' '}
+      {!league ? <h1 style={{ color: 'white' }}>Not Available</h1> : null}
     </div>
   );
 };

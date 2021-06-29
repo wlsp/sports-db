@@ -10,7 +10,8 @@
     font-size: 20rem;
     font-weight: 700;
     color: black;
-    text-shadow: 1px 1px 1px #E83539, 1px -1px 1px #E83539, -1px 1px 1px #E83539, -1px -1px 1px #E83539;
+    text-shadow: 1px 1px 1px #e83539, 1px -1px 1px #e83539, -1px 1px 1px #e83539,
+      -1px -1px 1px #e83539;
     position: absolute;
     z-index: -5;
   }
@@ -28,8 +29,31 @@
       display: inline-block;
       margin-left: 2rem;
       font-size: 1rem;
-      // text-transform: lowercase;
       text-transform: capitalize;
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .list {
+    section {
+      padding-top: 13%;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .list {
+    section {
+      padding-top: 15%;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .list {
+    section {
+      padding-top: 20%;
     }
   }
 }
