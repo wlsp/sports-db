@@ -196,7 +196,7 @@ const HomePage = ({ searchTerm }) => {
           </div>
         </div>
         <div className='form'>
-          <div className='multiselect'>
+          <div className='multiselect sports'>
             <div className='selectBox'>
               <select>
                 <option>All Sports</option>
@@ -206,7 +206,7 @@ const HomePage = ({ searchTerm }) => {
               </div>
             </div>
             {isShow && (
-              <div className='checkboxes'>
+              <div className='checkboxes sportsboxes'>
                 {allSports &&
                   allSports.map((sport) => {
                     return (
