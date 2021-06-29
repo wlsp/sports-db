@@ -2,11 +2,7 @@
 /*  font-family: 'Open Sans', sans-serif; */
 
 
-  
-
-  .country{
-* {
-  .country {
+    .country {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -62,6 +58,7 @@
       }
     }
   }
+  
   .linking {
     display: block;
     text-decoration: none;
@@ -294,6 +291,7 @@
 }
 
 /*-------------------------------------------------Media Query for min-width 992px----------------------------------------------*/
+
 @media (max-width: 992px) { 
   .country{
     margin: 0;
@@ -488,5 +486,5 @@
     margin-top: 3%;
   }
  }
-}
-  }
+
+  

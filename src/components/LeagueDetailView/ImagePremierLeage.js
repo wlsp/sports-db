@@ -1,10 +1,11 @@
+import imageRasen from '../../images/englishpremierleague.png'
 
 
 const ImageEngLeague = (props) => {
     return (
         <section className="secImg">
             <div>
-                <img src={props.image} alt="Rasen" />
+                <img src={imageRasen} alt="Rasen" />
             </div>
             <div>
                 <h1>{props.heading1}</h1>
