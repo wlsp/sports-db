@@ -121,13 +121,17 @@ const HomePage = () => {
   console.log(league);
   console.log('test 1', letters);
   console.log('pripremljeni state: ', letters);
-
   return (
     <div>
       <Hero />
       <div className='select'>
-        <span className='selectedCountrie'> Countrie </span>
-        <span className='selectedSport'> Sport </span>
+        {
+          country &&
+          <span className="selectedCountrie"><span className="close" onClick={() => setCountry('')} >X</span> {country.split('_').join(' ')} </span>
+        }
+        {Sport &&
+          <span className="selectedSport" ><span className="close" onClick={() => setSport('')} >X</span> {Sport.split('_').join(' ')} </span>
+        }
         <div className='form'>
           <div className='multiselect'>
             <div className='selectBox'>
@@ -144,19 +148,18 @@ const HomePage = () => {
                 {allCountries &&
                   allCountries.map((countrie) => {
                     return (
-                      <label>
+                      <label key={uuidv4()}>
                         <input
                           type='checkbox'
                           checked={
                             country === prepareQueryString(countrie.name_en)
                           }
-                          key={uuidv4()}
                           value={countrie.name_en}
                           onChange={(checked) => {
                             let newCountry = prepareQueryString(
                               checked.target.defaultValue
                             );
-
+                            setShown(!isShown);
                             return setCountry(newCountry);
                           }}
                         />
@@ -183,15 +186,20 @@ const HomePage = () => {
                 {allSports &&
                   allSports.map((sport) => {
                     return (
-                      <label>
+                      <label key={uuidv4()}>
                         <input
                           type='checkbox'
-                          checked={Sport === sport.strSport}
-                          key={uuidv4()}
-                          value={sport.strSport}
-                          onChange={(checked) =>
-                            setSport(checked.target.defaultValue)
+                          checked={
+                            Sport === sport.strSport
                           }
+                          value={sport.strSport}
+                          onChange={(checked) => {
+                            let newSport = prepareQueryString(
+                              checked.target.defaultValue
+                            );
+                            setShow(!isShow);
+                            return setSport(newSport);
+                          }}
                         />
                         {sport.strSport}
                       </label>
@@ -202,8 +210,9 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      {league
-        ? letters.map((el, i) => {
+      {
+        league
+          ? letters.map((el, i) => {
             let letter = myAlphabet[i];
             return (
               el[letter].length > 0 && (
@@ -220,9 +229,9 @@ const HomePage = () => {
               )
             );
           })
-        : null}{' '}
-      {!league ? <h1 style={{ color: 'white' }}>Not Available</h1> : null}
-    </div>
+          : null
+      }
+    </div >
   );
 };
 
