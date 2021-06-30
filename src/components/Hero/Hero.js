@@ -12,7 +12,7 @@ const Hero = () => {
             </figcaption>
         </figure>
         <aside className="titleContainer">
-            <span className="titleWrapper">
+            <span onClick={() => window.scrollTo(0, 0)} className="titleWrapper">
                 <img src={Arrowup} alt='Up-Arrow' />
             </span>
         </aside>
