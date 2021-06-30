@@ -39,6 +39,7 @@ function Country({ match }) {
 
 
     useEffect(() => {
+        window.scrollTo(0, 0)
         async function getData() {
             try {
                 let { data } = await axios.get(

@@ -185,7 +185,7 @@ const HomePage = ({ searchTerm }) => {
         );
       })
     ) : (
-      <Loader />
+      null
     );
 
   let selectAllCountries =
@@ -233,8 +233,11 @@ const HomePage = ({ searchTerm }) => {
     <div>
       <Hero />
       <div className='select'>
+        <div className="selectWrapper">
         {selectedCountry}
         {selectedSport}
+        </div>
+        <div className="selectWrapperForm">
         <div className='form'>
           <div className='multiselect'>
             <div className='selectBox'>
@@ -263,6 +266,7 @@ const HomePage = ({ searchTerm }) => {
               <div className='checkboxes sportsboxes'>{selectAllSports}</div>
             )}
           </div>
+        </div>
         </div>
       </div>
 
