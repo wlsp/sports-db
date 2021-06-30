@@ -1,12 +1,7 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  withRouter,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import TeamDetailView from './pages/TeamDetailView';
 import Navbar from './components/Navigation/Navbar';
@@ -16,23 +11,8 @@ import NotFound from './pages/NotFound';
 
 function App() {
   let [searchLetter, setSearchLetter] = useState('');
-  let [searchTerm, setSearchTerm] = useState('');
-
-  useEffect(() => {
-    let myInterval = setInterval(() => {
-      setSearchTerm(searchLetter);
-    }, 300);
-    return () => {
-      clearInterval(myInterval);
-    };
-  }, [searchLetter]);
-
-  console.log('search term is: ', searchLetter);
-  console.log('search term is: ', searchTerm);
 
   function handleSearchTerm(e) {
-    console.log(e);
-
     setSearchLetter(e.target.value);
   }
 
@@ -45,7 +25,7 @@ function App() {
         <Route
           path='/'
           exact
-          component={() => <HomePage searchTerm={searchTerm} />}
+          component={() => <HomePage searchTerm={searchLetter} />}
         />
         <Route exact path='*' component={NotFound} />
       </Switch>
@@ -53,4 +33,4 @@ function App() {
   );
 }
 
-export default withRouter(App);
+export default App;

@@ -6,10 +6,9 @@ import ArrowLogo from '../../images/arrow-logo.svg';
 import SearchIcon from '../../images/search-icon.svg';
 
 const Header = ({ searchTerm, appState, history }) => {
-  console.log('search Term:', searchTerm);
   return (
     <nav>
-      <Link exact to='/'>
+      <Link to='/'>
         <span className='logo-box'>
           <img src={ArrowLogo} alt='' />
           <h4>Sports.db</h4>
@@ -23,7 +22,7 @@ const Header = ({ searchTerm, appState, history }) => {
         className='search-box'
       >
         <span className='search-btn'>
-          <img src={SearchIcon} alt='' />
+          <img src={SearchIcon} alt='search-logo' />
         </span>
         <input
           className='search'
