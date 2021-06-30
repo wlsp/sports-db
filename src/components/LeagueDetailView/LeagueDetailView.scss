@@ -1,105 +1,98 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 /*  font-family: 'Open Sans', sans-serif; */
 
+.country {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  padding-top: 15%;
 
-    .country {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-     padding-top: 15%; 
-    
-    .secImg {
-      display: flex;
-      width: 100%;
-      overflow-y: hidden;
-      padding-bottom: 6%;
+  .secImg {
+    display: flex;
+    width: 100%;
+    overflow-y: hidden;
+    padding-bottom: 6%;
 
-      div:nth-child(1) {
-        height: 100%;
-        width: 50%;
-        position: relative;
-        top: 3%;
-        left: 25%;
-        margin-top: 3%;
+    div:nth-child(1) {
+      height: 100%;
+      width: 50%;
+      position: relative;
+      top: 3%;
+      left: 25%;
+      margin-top: 3%;
 
-        img {
-          width: 660px;
-          height: 800px;
-          margin: 0;
-        }
+      img {
+        width: 660px;
+        height: 800px;
+        margin: 0;
+      }
+    }
+
+    div:nth-child(2) {
+      height: 100%;
+      width: 50%;
+      position: relative;
+      right: 15%;
+      padding-top: 12%;
+
+      h1 {
+        font-size: 7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: end;
+        line-height: 125%;
+        margin: 0;
       }
 
-      div:nth-child(2) {
-        height: 100%;
-        width: 50%;
-        position: relative;
-        right: 15%;
-        padding-top: 12%;
-        
-
-        h1 {
-          font-size: 7rem;
-          font-weight: 700;
-          text-transform: uppercase;
-          text-align: end;
-          line-height: 125%;
-          margin: 0;
-          
-          
-        }
-
-        h2 {
-          font-size: 4.2rem;
-          text-transform: uppercase;
-          text-align: end;
-          font-family: 'Open Sans', sans-serif;
-          font-weight: 700;
-          margin: 0;
-          
-        }
+      h2 {
+        font-size: 4.2rem;
+        text-transform: uppercase;
+        text-align: end;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+        margin: 0;
       }
     }
   }
-  
-  .linking {
-    display: block;
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.7rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 73px;
-    letter-spacing: 0em;
-    text-align: left;
-    padding-left: 48px;
-    text-transform: uppercase;
-    transition-duration: 650ms;
-    transition-property: all;
-    transition-timing-function: ease-in;
+}
 
-    span {
-      font-size: 16px;
-      padding-left: 24px;
-    }
+.linking {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.7rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 73px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-left: 48px;
+  text-transform: uppercase;
+  transition-duration: 650ms;
+  transition-property: all;
+  transition-timing-function: ease-in;
+
+  span {
+    font-size: 16px;
+    padding-left: 24px;
   }
+}
 
-  .linking:hover {
-    font-size: 2.3rem;
-    cursor: pointer;
-    transition-duration: 650ms;
-    transition-property:all;
-    transition-timing-function: ease-in;
-    
-  }
+.linking:hover {
+  font-size: 2.3rem;
+  cursor: pointer;
+  transition-duration: 650ms;
+  transition-property: all;
+  transition-timing-function: ease-in;
+}
 
-  .secLink {
-    margin-top: 0%;
-  }
-
+.secLink {
+  margin-top: 0%;
+}
 
 /*-------------------------------------------------Media Query for max-width 1440px----------------------------------------------*/
-@media (max-width: 1440px) { 
-  .country{
+@media (max-width: 1440px) {
+  .country {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -108,7 +101,7 @@
       display: flex;
       width: 100%;
       overflow-y: hidden;
-      padding-bottom: 2%
+      padding-bottom: 2%;
       div:nth-child(1) {
         height: 100%;
         width: 50%;
@@ -118,12 +111,11 @@
         margin-top: 3%;
 
         img {
-          width: 660px ;
+          width: 660px;
           height: 800px;
           margin: 0;
         }
       }
-
       div:nth-child(2) {
         height: 100%;
         width: 50%;
@@ -138,8 +130,6 @@
           text-align: end;
           line-height: 125%;
           margin: 0;
-          
-          
         }
 
         h2 {
@@ -149,54 +139,35 @@
           font-family: 'Open Sans', sans-serif;
           font-weight: 700;
           margin: 0;
-          
         }
-
       }
     }
-  
-  .linking {
-    display: block;
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.4rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 20px;
-    letter-spacing: 0em;
-    text-align: left;
-    padding-left: 48px;
-    text-transform: uppercase;
-    transition-duration: 650ms;
-    transition-property:all;
-    transition-timing-function: ease-in;
-    
+    .linking {
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.4rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 20px;
+      letter-spacing: 0em;
+      text-align: left;
+      padding-left: 48px;
+      text-transform: uppercase;
+      transition-duration: 650ms;
+      transition-property: all;
+      transition-timing-function: ease-in;
 
-    span {
-      font-size: 16px;
-      padding-left: 24px;
+      span {
+        font-size: 16px;
+        padding-left: 24px;
+      }
     }
-    
-   
   }
-  
-  .linking:hover {
-    font-size:1.9rem;
-    cursor: pointer;
-    transition-duration: 650ms;
-    transition-property:all;
-    transition-timing-function: ease-in;
-    
-  }
-
-  .secLink {
-    margin-top: 2%;
-  }
-
-
+}
 /*-------------------------------------------------Media Query for max-width 1200px----------------------------------------------*/
-@media (max-width: 1200px) { 
-  .country{
+@media (max-width: 1200px) {
+  .country {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -206,18 +177,18 @@
       display: flex;
       width: 100%;
       overflow-y: hidden;
-      padding-bottom: 5%;                   /*Hier den Abstand zu den Links herstellen*/
-      
+      padding-bottom: 5%; /*Hier den Abstand zu den Links herstellen*/
+
       div:nth-child(1) {
         height: 100%;
         width: 50%;
         position: relative;
         top: 3%;
         left: 12%;
-        margin-top: 3%;                           
+        margin-top: 3%;
 
         img {
-          width:600px ;
+          width: 600px;
           height: 700px;
           margin: 0;
         }
@@ -237,8 +208,6 @@
           text-align: end;
           line-height: 125%;
           margin: 0;
-          
-          
         }
 
         h2 {
@@ -248,9 +217,7 @@
           font-family: 'Open Sans', sans-serif;
           font-weight: 800;
           margin: 0;
-          
         }
-
       }
     }
   }
@@ -267,18 +234,15 @@
     padding-left: 48px;
     text-transform: uppercase;
     transition-duration: 650ms;
-    transition-property:all;
-    transition-timing-function: ease-in; 
-    
+    transition-property: all;
+    transition-timing-function: ease-in;
 
     span {
       font-size: 14px;
       padding-left: 24px;
     }
-    
-   
   }
-  
+
   .linking:hover {
     font-size: 1.5rem;
     cursor: pointer;
@@ -292,10 +256,9 @@
   }
 }
 
-
 /*-------------------------------------------------Media Query for max-width 1024px----------------------------------------------*/
-@media (max-width: 1024px) { 
-  .country{
+@media (max-width: 1024px) {
+  .country {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -305,18 +268,18 @@
       display: flex;
       width: 100%;
       overflow-y: hidden;
-      padding-bottom: 5%;                   /*Hier den Abstand zu den Links herstellen*/
-      
+      padding-bottom: 5%; /*Hier den Abstand zu den Links herstellen*/
+
       div:nth-child(1) {
         height: 100%;
         width: 50%;
         position: relative;
         top: 3%;
         left: 7%;
-        margin-top: 3%;                           
+        margin-top: 3%;
 
         img {
-          width:600px ;
+          width: 600px;
           height: 700px;
           margin: 0;
         }
@@ -336,8 +299,6 @@
           text-align: end;
           line-height: 125%;
           margin: 0;
-          
-          
         }
 
         h2 {
@@ -347,9 +308,7 @@
           font-family: 'Open Sans', sans-serif;
           font-weight: 800;
           margin: 0;
-          
         }
-
       }
     }
   }
@@ -366,18 +325,15 @@
     padding-left: 48px;
     text-transform: uppercase;
     transition-duration: 650ms;
-    transition-property:all;
-    transition-timing-function: ease-in; 
-    
+    transition-property: all;
+    transition-timing-function: ease-in;
 
     span {
       font-size: 14px;
       padding-left: 24px;
     }
-    
-   
   }
-  
+
   .linking:hover {
     font-size: 1.5rem;
     cursor: pointer;
@@ -393,8 +349,8 @@
 
 /*-------------------------------------------------Media Query for max-width 992px----------------------------------------------*/
 
-@media (max-width: 992px) { 
-  .country{
+@media (max-width: 992px) {
+  .country {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -404,7 +360,7 @@
       display: flex;
       width: 100%;
       overflow-y: hidden;
-      
+
       div:nth-child(1) {
         height: 100%;
         width: 50%;
@@ -414,7 +370,7 @@
         margin-top: 3%;
 
         img {
-          width:500px ;
+          width: 500px;
           height: 600px;
           margin: 0;
         }
@@ -434,8 +390,6 @@
           text-align: end;
           line-height: 125%;
           margin: 0;
-          
-          
         }
 
         h2 {
@@ -445,9 +399,7 @@
           font-family: 'Open Sans', sans-serif;
           font-weight: 700;
           margin: 0;
-          
         }
-
       }
     }
   }
@@ -464,35 +416,31 @@
     padding-left: 48px;
     text-transform: uppercase;
     transition-duration: 650ms;
-    transition-property:all;
+    transition-property: all;
     transition-timing-function: ease-in;
-    
 
     span {
-      font-size: .6rem;
+      font-size: 0.6rem;
       padding-left: 24px;
     }
-    
-   
   }
-  
+
   .linking:hover {
     font-size: 1.5rem;
     cursor: pointer;
     transition-duration: 650ms;
-    transition-property:all;
+    transition-property: all;
     transition-timing-function: ease-in;
-    
   }
 
   .secLink {
     margin-top: 2%;
   }
- }
+}
 
- /*-------------------------------------------------Media Query for max-width 768px----------------------------------------------*/
- @media (max-width: 768px) { 
-  .country{
+/*-------------------------------------------------Media Query for max-width 768px----------------------------------------------*/
+@media (max-width: 768px) {
+  .country {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -502,7 +450,7 @@
       display: flex;
       width: 100%;
       overflow-y: hidden;
-      
+
       div:nth-child(1) {
         height: 100%;
         width: 50%;
@@ -512,7 +460,7 @@
         margin-top: 3%;
 
         img {
-          width:400px ;
+          width: 400px;
           height: 500px;
           margin: 0;
         }
@@ -532,8 +480,6 @@
           text-align: end;
           line-height: 125%;
           margin: 0;
-          
-          
         }
 
         h2 {
@@ -543,9 +489,7 @@
           font-family: 'Open Sans', sans-serif;
           font-weight: 700;
           margin: 0;
-          
         }
-
       }
     }
   }
@@ -562,429 +506,388 @@
     padding-left: 48px;
     text-transform: uppercase;
     transition-duration: 650ms;
-    transition-property:all;
+    transition-property: all;
     transition-timing-function: ease-in;
-    
 
     span {
       font-size: 10px;
       padding-left: 24px;
     }
-    
-   
   }
-  
+
   .linking:hover {
     font-size: 1.3rem;
     cursor: pointer;
     transition-duration: 650ms;
-    transition-property:all;
+    transition-property: all;
     transition-timing-function: ease-in;
-    
   }
 
   .secLink {
     margin-top: 1%;
   }
- }
+}
 
-  /*-------------------------------------------------Media Query for max-width 576px----------------------------------------------*/
-  @media (max-width: 576px) { 
-    .country{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      padding-top: 17%;
-  
-      margin-top: 6%;
-      .secImg {
-        display: flex;
-        width: 100%;
-        overflow-y: hidden;
-        
-        div:nth-child(1) {
-          height: 100%;
-          width: 50%;
-          position: relative;
-          top: 7%;
-          left: 7%;
-          margin-top: 3%;
-  
-          img {
-            width: 340px ;
-            height: 450px;
-            margin: 0;
-          }
-        }
-  
-        div:nth-child(2) {
-          height: 100%;
-          width: 50%;
-          position: relative;
-          right: 0%;
-          padding-top: 22%;
-  
-          h1 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            text-align: end;
-            line-height:125%;
-            margin: 0;
-            
-            
-          }
-  
-          h2 {
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            text-align: center;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 700;
-            margin: 0;
-            
-          }
-  
-        }
-      }
-    }
-    .linking {
-      display: block;
-      text-decoration: none;
-      color: #fff;
-      font-size: .9rem;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 12px;
-      letter-spacing: 0em;
-      text-align: left;
-      padding-left: 48px;
-      text-transform: uppercase;
-      transition-duration: 650ms;
-      transition-property:all;
-      transition-timing-function: ease-in;
-      
-  
-      span {
-        font-size: 7px;
-        padding-left: 24px;
-      }
-      
-     
-    }
-    
-    .linking:hover {
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition-duration: 650ms;
-      transition-property:all;
-      transition-timing-function: ease-in;
-      
-    }
-  
-    .secLink {
-      margin-top: 5%;
-    }
-   }
-  
+/*-------------------------------------------------Media Query for max-width 576px----------------------------------------------*/
+@media (max-width: 576px) {
+  .country {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    padding-top: 17%;
 
+    margin-top: 6%;
+    .secImg {
+      display: flex;
+      width: 100%;
+      overflow-y: hidden;
 
-    /*-------------------------------------------------Media Query for max-width 414px----------------------------------------------*/
-  @media (max-width: 414px) { 
-    .country{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      padding-top: 23%;
-  
-      margin-top: 6%;
-      .secImg {
-        display: flex;
-        width: 100%;
-        overflow-y: hidden;
-        
-        div:nth-child(1) {
-          height: 100%;
-          width: 50%;
-          position: relative;
-          top: 7%;
-          left: 3%;
-          margin-top: 3%;
-  
-          img {
-            width: 270px ;
-            height: 340px;
-            margin: 0;
-          }
-        }
-  
-        div:nth-child(2) {
-          height: 100%;
-          width: 50%;
-          position: relative;
-          right: 0%;
-          padding-top: 22%;
-  
-          h1 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            text-align: end;
-            line-height:125%;
-            margin: 0;
-            
-            
-          }
-  
-          h2 {
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            text-align: center;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 700;
-            margin: 0;
-            
-          }
-  
-        }
-      }
-    }
-    .linking {
-      display: block;
-      text-decoration: none;
-      color: #fff;
-      font-size: .9rem;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 12px;
-      letter-spacing: 0em;
-      text-align: left;
-      padding-left: 48px;
-      text-transform: uppercase;
-      transition-duration: 650ms;
-      transition-property:all;
-      transition-timing-function: ease-in;
-      
-  
-      span {
-        font-size: 7px;
-        padding-left: 24px;
-      }
-      
-     
-    }
-    
-    .linking:hover {
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition-duration: 650ms;
-      transition-property:all;
-      transition-timing-function: ease-in;
-      
-    }
-  
-    .secLink {
-      margin-top: 5%;
-    }
-   }
-  
+      div:nth-child(1) {
+        height: 100%;
+        width: 50%;
+        position: relative;
+        top: 7%;
+        left: 7%;
+        margin-top: 3%;
 
-
-     /*-------------------------------------------------Media Query for max-width 320px----------------------------------------------*/
-
-     @media (max-width: 320px) { 
-      .country{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    
-        padding-top: 19%;
-        .secImg {
-          display: flex;
-          width: 100%;
-          overflow-y: hidden;
-          
-          div:nth-child(1) {
-            height: 100%;
-            width: 50%;
-            position: relative;
-            top: 7%;
-            left: 12%;
-            margin-top: 3%;
-    
-            img {
-              width: 180px ;
-              height: 270px;
-              margin: 0;
-            }
-          }
-    
-          div:nth-child(2) {
-            height: 100%;
-            width: 50%;
-            position: relative;
-            right: 6%;
-            padding-top: 29%;
-    
-            h1 {
-              font-size:.8rem;
-              font-weight: 700;
-              text-transform: uppercase;
-              text-align: end;
-              line-height: 125%;
-              margin: 0;
-              
-              
-            }
-    
-            h2 {
-              font-size: .6rem;
-              text-transform: uppercase;
-              text-align: center;
-              font-family: 'Open Sans', sans-serif;
-              font-weight: 700;
-              margin: 0;
-              
-            }
-    
-          }
-        }
-      }
-      .linking {
-        display: block;
-        text-decoration: none;
-        color: #fff;
-        font-size: .6rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 20px;
-        letter-spacing: 0em;
-        text-align: left;
-        padding-left: 48px;
-        text-transform: uppercase;
-        transition-duration: 650ms;
-        transition-property:all;
-        transition-timing-function: ease-in;
-        
-    
-        span {
-          font-size: 3px;
-          padding-left: 9px;
-        }
-        
-       
-      }
-      
-      .linking:hover {
-        font-size: 16px;
-        cursor: pointer;
-        transition-duration: 650ms;
-        transition-property:all;
-        transition-timing-function: ease-in;
-        
-      }
-    
-      .secLink {
-        margin-top: 2%;
-      }
-     }
-
-
-      /*-------------------------------------------------Media Query for max-width 375px----------------------------------------------*/
-
-      @media (max-width: 375px) { 
-        .country{
+        img {
+          width: 340px;
+          height: 450px;
           margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-      
-          padding-top: 19%;
-          .secImg {
-            display: flex;
-            width: 100%;
-            overflow-y: hidden;
-            
-            div:nth-child(1) {
-              height: 100%;
-              width: 50%;
-              position: relative;
-              top: 7%;
-              left: 12%;
-              margin-top: 3%;
-      
-              img {
-                width: 180px ;
-                height: 270px;
-                margin: 0;
-              }
-            }
-      
-            div:nth-child(2) {
-              height: 100%;
-              width: 50%;
-              position: relative;
-              right: 6%;
-              padding-top: 29%;
-      
-              h1 {
-                font-size:.8rem;
-                font-weight: 700;
-                text-transform: uppercase;
-                text-align: end;
-                line-height: 125%;
-                margin: 0;
-                
-                
-              }
-      
-              h2 {
-                font-size: .6rem;
-                text-transform: uppercase;
-                text-align: center;
-                font-family: 'Open Sans', sans-serif;
-                font-weight: 700;
-                margin: 0;
-                
-              }
-      
-            }
-          }
         }
-        .linking {
-          display: block;
-          text-decoration: none;
-          color: #fff;
-          font-size: .6rem;
-          font-style: normal;
+      }
+
+      div:nth-child(2) {
+        height: 100%;
+        width: 50%;
+        position: relative;
+        right: 0%;
+        padding-top: 22%;
+
+        h1 {
+          font-size: 1.6rem;
           font-weight: 700;
-          line-height: 20px;
-          letter-spacing: 0em;
-          text-align: left;
-          padding-left: 48px;
           text-transform: uppercase;
-          transition-duration: 650ms;
-          transition-property:all;
-          transition-timing-function: ease-in;
-          
-      
-          span {
-            font-size: 3px;
-            padding-left: 9px;
-          }
-          
-         
+          text-align: end;
+          line-height: 125%;
+          margin: 0;
         }
-        
-        .linking:hover {
-          font-size: 16px;
-          cursor: pointer;
-          transition-duration: 650ms;
-          transition-property:all;
-          transition-timing-function: ease-in;
-          
+
+        h2 {
+          font-size: 1.1rem;
+          text-transform: uppercase;
+          text-align: center;
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 700;
+          margin: 0;
         }
-      
-        .secLink {
-          margin-top: 2%;
+      }
+    }
+  }
+  .linking {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 12px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-left: 48px;
+    text-transform: uppercase;
+    transition-duration: 650ms;
+    transition-property: all;
+    transition-timing-function: ease-in;
+
+    span {
+      font-size: 7px;
+      padding-left: 24px;
+    }
+  }
+
+  .linking:hover {
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition-duration: 650ms;
+    transition-property: all;
+    transition-timing-function: ease-in;
+  }
+
+  .secLink {
+    margin-top: 5%;
+  }
+}
+
+/*-------------------------------------------------Media Query for max-width 414px----------------------------------------------*/
+@media (max-width: 414px) {
+  .country {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    padding-top: 23%;
+
+    margin-top: 6%;
+    .secImg {
+      display: flex;
+      width: 100%;
+      overflow-y: hidden;
+
+      div:nth-child(1) {
+        height: 100%;
+        width: 50%;
+        position: relative;
+        top: 7%;
+        left: 3%;
+        margin-top: 3%;
+
+        img {
+          width: 270px;
+          height: 340px;
+          margin: 0;
         }
-       }
+      }
+
+      div:nth-child(2) {
+        height: 100%;
+        width: 50%;
+        position: relative;
+        right: 0%;
+        padding-top: 22%;
+
+        h1 {
+          font-size: 1.2rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          text-align: end;
+          line-height: 125%;
+          margin: 0;
+        }
+
+        h2 {
+          font-size: 1.1rem;
+          text-transform: uppercase;
+          text-align: center;
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 700;
+          margin: 0;
+        }
+      }
+    }
+  }
+  .linking {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 12px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-left: 48px;
+    text-transform: uppercase;
+    transition-duration: 650ms;
+    transition-property: all;
+    transition-timing-function: ease-in;
+
+    span {
+      font-size: 7px;
+      padding-left: 24px;
+    }
+  }
+
+  .linking:hover {
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition-duration: 650ms;
+    transition-property: all;
+    transition-timing-function: ease-in;
+  }
+
+  .secLink {
+    margin-top: 5%;
+  }
+}
+
+/*-------------------------------------------------Media Query for max-width 320px----------------------------------------------*/
+
+@media (max-width: 320px) {
+  .country {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    padding-top: 19%;
+    .secImg {
+      display: flex;
+      width: 100%;
+      overflow-y: hidden;
+
+      div:nth-child(1) {
+        height: 100%;
+        width: 50%;
+        position: relative;
+        top: 7%;
+        left: 12%;
+        margin-top: 3%;
+
+        img {
+          width: 180px;
+          height: 270px;
+          margin: 0;
+        }
+      }
+
+      div:nth-child(2) {
+        height: 100%;
+        width: 50%;
+        position: relative;
+        right: 6%;
+        padding-top: 29%;
+
+        h1 {
+          font-size: 0.8rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          text-align: end;
+          line-height: 125%;
+          margin: 0;
+        }
+
+        h2 {
+          font-size: 0.6rem;
+          text-transform: uppercase;
+          text-align: center;
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 700;
+          margin: 0;
+        }
+      }
+    }
+  }
+  .linking {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-left: 48px;
+    text-transform: uppercase;
+    transition-duration: 650ms;
+    transition-property: all;
+    transition-timing-function: ease-in;
+
+    span {
+      font-size: 3px;
+      padding-left: 9px;
+    }
+  }
+
+  .linking:hover {
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 650ms;
+    transition-property: all;
+    transition-timing-function: ease-in;
+  }
+
+  .secLink {
+    margin-top: 2%;
+  }
+}
+
+/*-------------------------------------------------Media Query for max-width 375px----------------------------------------------*/
+
+@media (max-width: 375px) {
+  .country {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    padding-top: 19%;
+    .secImg {
+      display: flex;
+      width: 100%;
+      overflow-y: hidden;
+
+      div:nth-child(1) {
+        height: 100%;
+        width: 50%;
+        position: relative;
+        top: 7%;
+        left: 12%;
+        margin-top: 3%;
+
+        img {
+          width: 180px;
+          height: 270px;
+          margin: 0;
+        }
+      }
+
+      div:nth-child(2) {
+        height: 100%;
+        width: 50%;
+        position: relative;
+        right: 6%;
+        padding-top: 29%;
+
+        h1 {
+          font-size: 0.8rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          text-align: end;
+          line-height: 125%;
+          margin: 0;
+        }
+
+        h2 {
+          font-size: 0.6rem;
+          text-transform: uppercase;
+          text-align: center;
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 700;
+          margin: 0;
+        }
+      }
+    }
+  }
+  .linking {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.6rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-left: 48px;
+    text-transform: uppercase;
+    transition-duration: 650ms;
+    transition-property: all;
+    transition-timing-function: ease-in;
+
+    span {
+      font-size: 3px;
+      padding-left: 9px;
+    }
+  }
+
+  .linking:hover {
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 650ms;
+    transition-property: all;
+    transition-timing-function: ease-in;
+  }
+
+  .secLink {
+    margin-top: 2%;
+  }
+}
