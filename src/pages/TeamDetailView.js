@@ -25,7 +25,7 @@ const TeamDetailView = ({ match }) => {
     getData();
   }, []);
 
-  function breakText(target = ' ') {
+  function breakText(target = 'Nothing to show here') {
     let stringLength = Math.ceil(target.length / 2);
     let sliceIndex = target.indexOf(' ', stringLength);
     let text1 = target.substring(0, sliceIndex);
@@ -38,11 +38,13 @@ const TeamDetailView = ({ match }) => {
   }
 
   let firstText =
-    team && team[0].strDescriptionEN && breakText(team[0].strDescriptionEN);
+    team && team[0].strDescriptionEN
+      ? breakText(team[0].strDescriptionEN)
+      : breakText();
   let stadiumText =
-    team &&
-    team[0].strStadiumDescription &&
-    breakText(team[0].strStadiumDescription);
+    team && team[0].strStadiumDescription
+      ? breakText(team[0].strStadiumDescription)
+      : breakText();
 
   console.log(team);
 
@@ -81,12 +83,12 @@ const TeamDetailView = ({ match }) => {
               <div className='teamDetailView-stadium'>
                 <AboutTeam
                   heading='Stadium'
-                  text1={stadiumText.text1 ? stadiumText.text1 : ''}
-                  text2={stadiumText.text2 ? stadiumText.text2 : ''}
+                  text1={stadiumText.text1}
+                  text2={stadiumText.text2}
                 />
                 <aside>
                   <p>{el.strStadium}</p>
-                  <span>Home</span>
+                  {el.strStadium && <span>Home</span>}
                   <p>{el.intStadiumCapacity}</p>
                   <span>Capacity</span>
                 </aside>
