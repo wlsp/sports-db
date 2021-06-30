@@ -45,8 +45,6 @@ const TeamDetailView = ({ match }) => {
       ? breakText(team[0].strStadiumDescription)
       : breakText();
 
-  console.log(team);
-
   return (
     <div className='teamDetailView'>
       {team &&
