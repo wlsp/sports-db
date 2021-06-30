@@ -103,14 +103,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
     padding-top: 10%;
     .secImg {
       display: flex;
       width: 100%;
       overflow-y: hidden;
       padding-bottom: 2%
-      
       div:nth-child(1) {
         height: 100%;
         width: 50%;
@@ -156,7 +154,7 @@
 
       }
     }
-  }
+  
   .linking {
     display: block;
     text-decoration: none;
@@ -194,7 +192,7 @@
   .secLink {
     margin-top: 2%;
   }
-}
+
 
 /*-------------------------------------------------Media Query for max-width 1200px----------------------------------------------*/
 @media (max-width: 1200px) { 

@@ -52,7 +52,7 @@ function Country({ match }) {
             }
         }
         getData();
-    }, []);
+    }, [match.params.id]);
 
     console.log(match);
     return (
