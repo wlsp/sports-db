@@ -46,16 +46,16 @@ function Country({ match }) {
                     `https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=${match.params.id}`
                 );
 
-                console.log(data);
+
                 setState(data.teams);
             } catch (error) {
-                console.log(error);
+
             }
         }
         getData();
     }, [match.params.id]);
 
-    console.log(match);
+
     return (
         <div className='country'>
             <ImageEngLeague
