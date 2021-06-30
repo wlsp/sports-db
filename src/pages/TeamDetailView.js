@@ -17,15 +17,14 @@ const TeamDetailView = ({ match }) => {
           `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${match.params.id}`
         );
         setTeam(data.teams);
-        console.log(team);
       } catch (error) {
         console.log(error);
       }
     }
     getData();
-  }, []);
+  }, [match.params.id]);
 
-  function breakText(target = 'Nothing to show here') {
+  function breakText(target = 'Nothing to show here!') {
     let stringLength = Math.ceil(target.length / 2);
     let sliceIndex = target.indexOf(' ', stringLength);
     let text1 = target.substring(0, sliceIndex);
