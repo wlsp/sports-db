@@ -1,6 +1,6 @@
 # Supercode Frontend Abschluss-Project:  "Sports-DB"  bootstraped mit JS-React 
 
-#  [Here you can take a look 👀](https://app.netlify.com/sites/sportsdb/overview).
+#  [Here you can take a look 👀](https://sportsdb.netlify.app/).
 
 "
 Kurze Projektbeschreibung:
